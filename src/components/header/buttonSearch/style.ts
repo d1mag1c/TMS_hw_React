@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const BtnSearch = styled.div`
-  width: 5%;
+  width: 50px;
   min-width: 50px;
   display: flex;
   justify-content: center;
