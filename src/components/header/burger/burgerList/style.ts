@@ -6,6 +6,7 @@ export const BurgerListBlock = styled.div`
   min-height: max-content;
   background: #0057ff;
   top: 50px;
+  z-index: 2;
 `
 
 export const BurgerListUl = styled.ul`
