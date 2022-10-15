@@ -1,27 +1,20 @@
 import React from 'react';
 import {InitialsBlock} from "./style";
+import {UserObj} from "../../../data/Data";
 
-type IUser = {
-    user: string
-}
+export function findInitials(user: string): string {
 
-const UserObj:IUser[] =
-    [{
-    user: 'Дима Зайцев'
-}]
-
-function findInitials (user:string):string {
-
-    let UserInitials:string = '';
+    let UserInitials: string = '';
     user.split(' ').filter((e) => UserInitials += e[0])
-    return UserInitials
+    return UserInitials.toUpperCase()
 }
 
 const Initials = () => {
 
-    const InitialsFunc = findInitials(UserObj[0].user);
     return (
-        <InitialsBlock>{InitialsFunc}</InitialsBlock>
+        <InitialsBlock>
+            {findInitials(UserObj[0].user)}
+        </InitialsBlock>
     );
 };
 

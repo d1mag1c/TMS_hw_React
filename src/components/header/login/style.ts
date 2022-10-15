@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const LoginBlock = styled.div`
-display: flex;
+  display: flex;
   justify-content: space-around;
   align-items: center;
   width: 250px;
   min-width: max-content;
   cursor: pointer;
+
   &:hover {
     background: blue;
   }
@@ -24,7 +25,6 @@ export const InitialsBlock = styled.div`
 `
 
 export const UserBlock = styled.div`
-min-width: max-content;
-
+  min-width: max-content;
   margin: 0 5px;
 `

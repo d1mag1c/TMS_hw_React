@@ -1,18 +1,22 @@
 import React from 'react';
 import {BurgerListBlock, BurgerListUl, BurgerListLi} from "./style";
-import Login from "../../login/Login";
+import {UserObj} from "../../../../data/Data";
+import {findInitials} from "../../login/Initials";
+import {InitialsBlock, LoginBlock} from "../../login/style";
 
 const BurgerList = () => {
     return (
         <BurgerListBlock>
             <BurgerListUl>
-                <BurgerListLi><Login /></BurgerListLi>
-                <BurgerListLi> User 2</BurgerListLi>
-                <BurgerListLi> User 3</BurgerListLi>
-                <BurgerListLi> User 4</BurgerListLi>
+                {UserObj.map((e, index) =>
+                    <BurgerListLi key={index}>
+                        <InitialsBlock>
+                            {findInitials(e.user.toString())}
+                        </InitialsBlock>
+                        {e.user}
+                    </BurgerListLi>)}
             </BurgerListUl>
         </BurgerListBlock>
-
     );
 };
 
