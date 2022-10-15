@@ -4,5 +4,6 @@ export const HeaderBlock = styled.section`
   background: #0057ff;
   display: flex;
   height: 50px;
-
+  position: relative;
+  color: white;
 `

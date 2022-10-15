@@ -4,9 +4,12 @@ export const LoginBlock = styled.div`
 display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 15%;
+  width: 250px;
   min-width: max-content;
-  color: white;
+  cursor: pointer;
+  &:hover {
+    background: blue;
+  }
 `
 
 export const InitialsBlock = styled.div`

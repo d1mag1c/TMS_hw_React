@@ -1,16 +1,25 @@
 import styled from "styled-components";
 
-export const BurgerMenu = styled.div` 
-    width: 5%;
+export const BurgerMenu = styled.div<{ symbol: string }>`
+  width: 50px;
   min-width: 50px;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 150%;
   border-right: 1px solid cornflowerblue;
   cursor: pointer;
-  &:hover{
+  height: 100%;
+
+  &:hover {
     background: blue;
   }
+
+  &::before {
+    content: '${props => props.symbol}';
+  }
+`
+
+export const BurgerPosition = styled.div`
+  position: relative;
 `

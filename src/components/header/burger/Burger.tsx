@@ -1,10 +1,18 @@
-import React from 'react';
-import {BurgerMenu} from "./style";
-
+import React, {useState} from 'react';
+import {BurgerMenu, BurgerPosition} from "./style";
+import BurgerList from "./burgerList/BurgerList";
 
 const Burger = () => {
+    const [open, openBurger] = useState(false)
     return (
-        <BurgerMenu>&#9776;</BurgerMenu>
+        <BurgerPosition>
+            <BurgerMenu
+                onClick={() => openBurger(state => !state)}
+                symbol={open ? '\\2716' : '\\2630'}
+            >
+            </BurgerMenu>
+            {open && <BurgerList/>}
+        </BurgerPosition>
     );
 };
 

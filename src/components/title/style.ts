@@ -10,6 +10,7 @@ const BlockTitle = styled.section`
   display: flex;
   width: max-content;
   padding: 20px;
+  margin: 20px auto;
 `;
 
 export {StyleTitle, BlockTitle}
