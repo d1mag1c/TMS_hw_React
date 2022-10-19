@@ -4,15 +4,9 @@ import MiddleCard from "./middleCard";
 
 const WrapperMiddleCards = () => {
     return (
-<WrapperMiddleCardsBlock>
-    <MiddleCard></MiddleCard>
-    <MiddleCard></MiddleCard>
-    <MiddleCard></MiddleCard>
-    <MiddleCard></MiddleCard>
-
-
-
-</WrapperMiddleCardsBlock>
+        <WrapperMiddleCardsBlock>
+            <MiddleCard/>
+        </WrapperMiddleCardsBlock>
     );
 };
 

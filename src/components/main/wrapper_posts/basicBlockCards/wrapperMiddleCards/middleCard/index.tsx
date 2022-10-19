@@ -1,9 +1,24 @@
 import React from 'react';
-import {MiddleCardBlock} from "./style";
+import {MiddleCardBlock, MiddleCardDate, MiddleCardImage, MiddleCardOther, MiddleCardTitle} from "./style";
+import {PostsArray} from "../../../../../../data/Posts";
+import Likes from "../../../../../forAll/likes";
+import {IconBookmarkPoints} from "../../../../../../iconBookmarkPoints";
 
 const MiddleCard = () => {
     return (
-<MiddleCardBlock>1</MiddleCardBlock>
+        <>
+            {PostsArray.results.slice(1, 10).map((e) =>
+                <MiddleCardBlock key={e.id}>
+                    <MiddleCardImage src={e.image}/>
+                    <MiddleCardDate>{e.date}</MiddleCardDate>
+                    <MiddleCardTitle>{e.title}</MiddleCardTitle>
+                    <MiddleCardOther>
+                        <Likes likesAmount={e.lesson_num}/>
+                        <IconBookmarkPoints/>
+                    </MiddleCardOther>
+                </MiddleCardBlock>
+            )}
+        </>
     );
 };
 

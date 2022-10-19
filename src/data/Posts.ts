@@ -10,10 +10,9 @@ export type IPostResult = {
     image: string,
     text: string,
     date: string,
-    lesson_num?: number,
+    lesson_num: number,
     title: string,
     author: number
-
 }
 
 export const PostsArray: IPosts = {
@@ -110,6 +109,69 @@ export const PostsArray: IPosts = {
             "lesson_num": 49,
             "title": "Cat Niira",
             "author": 123
-        }
+        },
+        {
+            "id": 71,
+            "image": "https://tms-studapi-dev.s3.amazonaws.com/media/zoe-gayah-jonker-uhnbTZC7N9k-unsplash.jpg",
+            "text": "mrrr",
+            "date": "2022-05-27",
+            "lesson_num": 12,
+            "title": "cat",
+            "author": 182
+        },
+        {
+            "id": 72,
+            "image": "https://tms-studapi-dev.s3.amazonaws.com/media/7C9368A2-8AEC-44A8-9D21-122AF2D25E5C_NUVKMB2.jpeg",
+            "text": "Диван",
+            "date": "2022-06-07",
+            "lesson_num": 3,
+            "title": "Диван",
+            "author": 311
+        },
+        {
+            "id": 73,
+            "image": "https://tms-studapi-dev.s3.amazonaws.com/media/7C9368A2-8AEC-44A8-9D21-122AF2D25E5C_2oAaMHK.jpeg",
+            "text": "Диван",
+            "date": "2022-06-07",
+            "lesson_num": 3,
+            "title": "Диван",
+            "author": 311
+        },
+        {
+            "id": 74,
+            "image": "https://tms-studapi-dev.s3.amazonaws.com/media/7C9368A2-8AEC-44A8-9D21-122AF2D25E5C_XGWOZg2.jpeg",
+            "text": "Test 1",
+            "date": "2022-06-09",
+            "lesson_num": 3,
+            "title": "Диван",
+            "author": 311
+        },
+        {
+            "id": 76,
+            "image": "https://tms-studapi-dev.s3.amazonaws.com/media/umbrella.jpeg",
+            "text": "Тест",
+            "date": "2022-06-09",
+            "lesson_num": 45,
+            "title": "Тест",
+            "author": 323
+        },
+        {
+            "id": 78,
+            "image": "https://tms-studapi-dev.s3.amazonaws.com/media/1_0VgKjLn.jpeg",
+            "text": "rewq",
+            "date": "2022-06-13",
+            "lesson_num": 44,
+            "title": "title",
+            "author": 397
+        },
+        {
+            "id": 79,
+            "image": "https://tms-studapi-dev.s3.amazonaws.com/media/1_vHt4Hoo.jpeg",
+            "text": "qertzup",
+            "date": "2022-06-13",
+            "lesson_num": 33,
+            "title": "title",
+            "author": 397
+        },
     ]
 }
