@@ -19,10 +19,14 @@ const Input = ({type, placeholder}:CustomInputProps) => {
 
     return (
         <FormBlock>
-            <InputBlock error={error} type={type} value={value} onChange={handleChange} placeholder={placeholder} onBlur={validateValue}/>
+            <InputBlock error={error}
+                        type={type}
+                        value={value}
+                        onChange={handleChange}
+                        placeholder={placeholder}
+                        onBlur={validateValue}/>
             {error && <SpanBlock>aaa</SpanBlock>}
         </FormBlock>
-
     );
 };
 

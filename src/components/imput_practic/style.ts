@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
 
 export const FormBlock = styled.div`
   margin: 50px auto;

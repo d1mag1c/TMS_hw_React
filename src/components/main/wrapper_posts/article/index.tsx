@@ -1,9 +1,12 @@
 import React from 'react';
 import {ArticleBlock} from "./style";
+import SmallCard from "./smallCard";
 
 const Article = () => {
     return (
-        <ArticleBlock></ArticleBlock>
+        <ArticleBlock>
+            <SmallCard/>
+        </ArticleBlock>
     );
 };
 
