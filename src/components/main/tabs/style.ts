@@ -3,22 +3,26 @@ import styled from "styled-components";
 export const TabsBlock = styled.section`
   width: 100%;
   height: max-content;
-  padding: 20px;
-  margin: 20px 0;
-  background: #eee2e2;
+  margin: 40px 0 0;
 `
 export const TabsList = styled.ul`
   display: flex;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #bdbdbd;
 `
 
 export const TabsLi = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 80px;
+  width: 100px;
+  height: 48px;
   position: relative;
+  font-weight: 600;
+  font-size: 16px;
+  
+  &:not(:first-of-type) {
+    margin-left: 80px;
+  }
 
   &:hover {
     color: blue;

@@ -12,17 +12,17 @@ const Tabs = () => {
                 <TabsLi
                     onClick={() => TabUse(1)}>
                     All
-                    {toggleState === 1 ? <BorderTab/> : ''}
+                    {toggleState === 1 ? <BorderTab/> : null}
                 </TabsLi>
                 <TabsLi
                     onClick={() => TabUse(2)}>
                     My favorites
-                    {toggleState === 2 ? <BorderTab/> : ''}
+                    {toggleState === 2 ? <BorderTab/> : null}
                 </TabsLi>
                 <TabsLi
                     onClick={() => TabUse(3)}>
                     Popular
-                    {toggleState === 3 ? <BorderTab/> : ''}
+                    {toggleState === 3 ? <BorderTab/> : null}
                 </TabsLi>
             </TabsList>
         </TabsBlock>
