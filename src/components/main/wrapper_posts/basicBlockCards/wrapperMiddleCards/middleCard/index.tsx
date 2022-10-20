@@ -1,7 +1,7 @@
 import React from 'react';
 import {MiddleCardBlock, MiddleCardDate, MiddleCardImage, MiddleCardOther, MiddleCardTitle} from "./style";
 import {PostsArray} from "../../../../../../data/Posts";
-import Likes from "../../../../../forAll/likes";
+import Likes from "../../../../../likes";
 import {IconBookmarkPoints} from "../../../../../../iconBookmarkPoints";
 
 const MiddleCard = () => {

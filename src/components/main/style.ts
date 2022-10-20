@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MainBlock = styled.section`
   display: flex;
   flex-direction: column;
-  margin: 72px auto 20px;
+  margin: 62px auto 20px;
   width: 1120px;
 
   @media (max-width: 1180px) {
