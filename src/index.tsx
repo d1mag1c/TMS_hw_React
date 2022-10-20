@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {GlobalStyle} from "./style";
-import Header from "./components/header/Header";
 import Main from "./components/main";
-import Footer from "./components/footer";
+import Layout from "./contaners/layout";
+import Input from "./components/imput_practic";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -11,10 +11,10 @@ const root = ReactDOM.createRoot(
 root.render(
     <>
         <GlobalStyle/>
-        <Header/>
-        <Main/>
-        <Footer/>
+        <Layout>
+            <Main/>
+        </Layout>
         {/*<Input type={'password'} placeholder={'Введите пароль'}/>*/}
-        {/*    <Input type={'text'} placeholder={'Введите текст'}/>*/}
+        {/*<Input type={'text'} placeholder={'Введите текст'}/>*/}
     </>
 );

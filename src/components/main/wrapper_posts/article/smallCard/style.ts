@@ -26,7 +26,6 @@ export const SmallCardTitle = styled.p`
   display: flex;
   overflow: hidden;
   height: 40%;
-  align-items: center;
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;

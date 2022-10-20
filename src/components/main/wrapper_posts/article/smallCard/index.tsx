@@ -7,7 +7,7 @@ import {
     SmallCardTitle
 } from "./style";
 import {PostsArray} from "../../../../../data/Posts";
-import Likes from "../../../../forAll/likes";
+import Likes from "../../../../likes";
 import {IconBookmarkPoints} from "../../../../../iconBookmarkPoints";
 
 
