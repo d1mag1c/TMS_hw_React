@@ -3,7 +3,7 @@ import {Input} from "./style";
 
 const InputSearch = () => {
     return (
-<Input placeholder='Search...'></Input>
+<Input placeholder='>>> Нажми для поиска! <<<'></Input>
     );
 };
 
