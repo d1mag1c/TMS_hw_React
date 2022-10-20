@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Title from "./components/title/Title";
 import {GlobalStyle} from "./style";
 import Header from "./components/header/Header";
-import Tabs from "./components/main/tabs/Tabs";
-import Input from "./components/imput_practic";
 import Main from "./components/main";
+import Footer from "./components/footer";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -13,10 +11,9 @@ const root = ReactDOM.createRoot(
 root.render(
     <>
         <GlobalStyle/>
-        {/*<Title/>*/}
-        <Header />
-<Main />
-
+        <Header/>
+        <Main/>
+        <Footer/>
         {/*<Input type={'password'} placeholder={'Введите пароль'}/>*/}
         {/*    <Input type={'text'} placeholder={'Введите текст'}/>*/}
     </>
