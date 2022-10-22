@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
-export const BurgerListBlock = styled.div`
+export const BurgerListBlock = styled.div<{ show?: boolean }>`
   position: absolute;
   width: 230px;
   min-height: max-content;
   background: white;
   top: 70px;
-  z-index: 2;
+  left: 0;
   height: 850px;
+  display: ${props => props.show ? 'block' : 'none'};
+  z-index: 5;
 `
 
 export const BurgerListUl = styled.ul`
@@ -16,7 +18,12 @@ export const BurgerListUl = styled.ul`
   flex-direction: column;
 `
 
-export const BurgerListLi = styled.li<{ bg?: boolean, white?: boolean }>`
+type IBurgerLi = {
+    bg?: boolean,
+    white?: boolean,
+}
+
+export const BurgerListLi = styled.li<IBurgerLi>`
   width: 100%;
   height: 83px;
   display: flex;
@@ -28,7 +35,7 @@ export const BurgerListLi = styled.li<{ bg?: boolean, white?: boolean }>`
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  background: ${(props) => (props.bg ? '#0057ff' : 'white')};
+  background: ${(props) => (props.bg ? '#2231AA;' : 'white')};
   color: ${(props) => (props.white ? 'white' : 'black')};
 
   &:first-of-type, &:nth-last-of-type(2) {
@@ -59,18 +66,26 @@ export const BurgerListLi = styled.li<{ bg?: boolean, white?: boolean }>`
   }
 `
 
-export const IconSunMoonBlock = styled.div`
+export const IconSunMoonBlock = styled.div<{fills?: boolean}>`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50%;
   height: 100%;
 
+  & svg {
+    fill: ${props => props.fills ? '#DADADA;' : 'black'};
+  }
+
   &:first-of-type {
     border-right: 1px solid #bdbdbd;
   }
 
   &:hover {
-    background: #E8E8E8;
+    background: ${props => props.fills ? 'rgba(225,225,225,0.38)' : null};;
+
+    svg {
+      fill: ${props => props.fills ? 'red' : 'black'};
+    }
   }
 `

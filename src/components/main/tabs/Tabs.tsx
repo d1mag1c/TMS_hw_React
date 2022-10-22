@@ -6,6 +6,7 @@ const Tabs = () => {
     const TabUse = (index: number) => {
         setToggleState(index)
     }
+
     return (
         <TabsBlock>
             <TabsList>

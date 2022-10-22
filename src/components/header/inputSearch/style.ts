@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Input = styled.input`
   width: 100%;
-  background: #0057ff;
+  background: #2231AA;
   border: none;
   padding-left: 20px;
   border-right: 1px solid cornflowerblue;

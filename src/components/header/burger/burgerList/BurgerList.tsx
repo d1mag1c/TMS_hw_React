@@ -1,30 +1,43 @@
-import React from 'react';
-import {BurgerListBlock, BurgerListLi, BurgerListUl, IconSunMoonBlock} from "./style";
+import React, {useState} from 'react';
+import {BurgerListLi, BurgerListUl, IconSunMoonBlock} from "./style";
 import {UserObj} from "../../../../data/Data";
 import {findInitials} from "../../login/Initials";
 import {InitialsBlock} from "../../login/style";
 import {MoonIcon, SunIcon} from "./iconSunMoon";
+import {darkTheme, GlobalStyleBody, lightTheme} from "../../../../style";
+import {ThemeProvider} from 'styled-components';
 
-const BurgerList = () => {
+export const BurgerList = () => {
+    const [theme, setTheme] = useState(true);
+
     return (
-        <BurgerListBlock>
-            <BurgerListUl>
-                <BurgerListLi bg white>
-                    <InitialsBlock>
-                        {findInitials(UserObj[0].user.toString())}
-                    </InitialsBlock>
-                    {UserObj[0].user}
-                </BurgerListLi>
-                <BurgerListLi>Home</BurgerListLi>
-                <BurgerListLi>Add Post</BurgerListLi>
-                <BurgerListLi>
-                    <IconSunMoonBlock><SunIcon/></IconSunMoonBlock>
-                    <IconSunMoonBlock><MoonIcon/></IconSunMoonBlock>
-                </BurgerListLi>
-                <BurgerListLi>Log Out</BurgerListLi>
-            </BurgerListUl>
-        </BurgerListBlock>
+
+        <>
+            <ThemeProvider theme={theme ? lightTheme : darkTheme}>
+                <GlobalStyleBody/>
+            </ThemeProvider>
+
+                <BurgerListUl>
+                    <BurgerListLi bg white>
+                        <InitialsBlock>
+                            {findInitials(UserObj[0].user.toString())}
+                        </InitialsBlock>
+                        {UserObj[0].user}
+                    </BurgerListLi>
+                    <BurgerListLi>Home</BurgerListLi>
+                    <BurgerListLi>Add Post</BurgerListLi>
+                    <BurgerListLi>
+                        <IconSunMoonBlock
+                            onClick={() => setTheme(true)}
+                            fills={!theme}><SunIcon/>
+                        </IconSunMoonBlock>
+                        <IconSunMoonBlock
+                            onClick={() => setTheme(false)}
+                            fills={theme}><MoonIcon/>
+                        </IconSunMoonBlock>
+                    </BurgerListLi>
+                    <BurgerListLi>Log Out</BurgerListLi>
+                </BurgerListUl>
+        </>
     );
 };
-
-export default BurgerList;
