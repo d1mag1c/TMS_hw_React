@@ -10,6 +10,8 @@ export const BurgerMenu = styled.div<{ symbol: string }>`
   border-right: 1px solid cornflowerblue;
   cursor: pointer;
   height: 100%;
+  position: relative;
+  z-index: 3;
 
   &:hover {
     background: blue;
@@ -20,6 +22,9 @@ export const BurgerMenu = styled.div<{ symbol: string }>`
   }
 `
 
-export const BurgerPosition = styled.div`
-  position: relative;
+export const BurgerModal = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 2000px;
+  z-index: 2;
 `
