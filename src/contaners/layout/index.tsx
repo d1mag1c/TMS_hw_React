@@ -1,5 +1,5 @@
 import React, {ReactNode} from 'react';
-import Header from "../../components/header/Header";
+import Index from "../../components/header";
 import Footer from "../../components/footer";
 import {GlobalStyle} from "../../style";
 
@@ -12,7 +12,7 @@ const Layout = ({children}: LayoutProps) => {
     return (
         <>
             <GlobalStyle/>
-            <Header/>
+            <Index/>
             {children}
             <Footer/>
         </>

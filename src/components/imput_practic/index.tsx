@@ -22,9 +22,6 @@ const Input = ({type, placeholder}: CustomInputProps) => {
     // const validateValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     //     value.length < 6 ? setError(true) : setError(false)
     // }
-    const handleSubmit = (e: any) => {
-        console.log(e.preventDefault())
-    }
 
     return (
         <FormBlock>

@@ -1,17 +1,17 @@
-import React from 'react';
-import {Blog, BlogTabs, MainBlock} from "./style";
-import Tabs from "./tabs/Tabs";
-import Wrapper_posts from "./wrapper_posts";
+import React, {ReactNode} from 'react';
+import {MainBlock} from "./style";
 
-const Main = () => {
+
+type MainProps = {
+    children: ReactNode
+}
+
+const Main = ({children}: MainProps ) => {
     return (
         <MainBlock>
-            <BlogTabs>
-                <Blog>Blog</Blog>
-                <Tabs/>
-            </BlogTabs>
-            <Wrapper_posts />
+            {children}
         </MainBlock>
+
     );
 };
 
