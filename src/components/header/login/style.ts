@@ -4,8 +4,8 @@ export const LoginBlock = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 250px;
-  min-width: max-content;
+  min-width: 70px;
+  height: 70px;
   cursor: pointer;
 
   &:hover {
@@ -24,7 +24,32 @@ export const InitialsBlock = styled.div`
   margin: 0 5px;
 `
 
-export const UserBlock = styled.div`
-  min-width: max-content;
-  margin: 0 5px;
+export const IconUser = styled.div`
+
+  height: 20px;
+  width: 20px;
+  position: relative;
+  &:before{
+    content: '';
+    width: 6px;
+    height: 6px;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top:0;
+    left: 5px;
+  }
+  
+  &:after{
+    content: '';
+    width: 16px;
+    height: 5px;
+    border: 2px solid white;
+    border-bottom: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 `

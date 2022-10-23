@@ -3,7 +3,7 @@ import {HeaderBlock} from "./style";
 import Burger from "./burger/Burger";
 import InputSearch from "./inputSearch/InputSearch";
 import ButtonSearch from "./buttonSearch/ButtonSearch";
-import Login from "./login/Login";
+import Index from "./login";
 
 const Header = () => {
     return (
@@ -11,7 +11,7 @@ const Header = () => {
             <Burger />
             <InputSearch />
             <ButtonSearch />
-            <Login />
+            <Index />
         </HeaderBlock>
     );
 };

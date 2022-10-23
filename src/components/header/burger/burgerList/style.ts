@@ -9,7 +9,7 @@ export const BurgerListBlock = styled.div<{ show?: boolean }>`
   left: 0;
   height: 850px;
   display: ${props => props.show ? 'block' : 'none'};
-  z-index: 5;
+  z-index: 10;
 `
 
 export const BurgerListUl = styled.ul`

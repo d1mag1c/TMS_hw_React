@@ -26,9 +26,11 @@ export const GlobalStyle = createGlobalStyle`
   li{
     list-style: none;
   }
-body{
-  background: #F3F3F3;
-}
+
+  button {
+    border: none;
+    cursor: pointer;
+  }
 `
 
 export const GlobalStyleBody = createGlobalStyle<{theme: ThemeType}>`

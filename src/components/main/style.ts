@@ -12,11 +12,11 @@ export const MainBlock = styled.section`
   }
 `
 export const BlogTabs = styled.div`
-    display: flex;
+  display: flex;
   flex-direction: column;
   margin-bottom: 64px;
-    `
+`
 export const Blog = styled.h1`
-    font-size: 56px;
+  font-size: 56px;
   font-family: 'Inter', serif;
-    `
+`
