@@ -56,7 +56,7 @@ export const RegButton = styled.button`
   background: #2231AA;
   border-radius: 2px;
   color: white;
-  margin-bottom: 24px;
+  margin: 24px 0;
 
 `
 
