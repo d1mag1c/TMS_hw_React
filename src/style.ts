@@ -31,6 +31,9 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
     cursor: pointer;
   }
+  a{
+    cursor: pointer;
+  }
 `
 
 export const GlobalStyleBody = createGlobalStyle<{theme: ThemeType}>`
