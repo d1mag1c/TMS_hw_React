@@ -17,8 +17,8 @@ const Registration = () => {
                 {reg ? <FormSignUp/> : <FormSignIn/>}
                 <RegButton>Sign In</RegButton>
                 <TextAsk>
-                    {reg ? 'Don’t have an account?' : 'Already have an account?'}
-                    <span onClick={() => setReg(state => !state)}>{reg ? 'Sign Up' : 'Sign In'}</span>
+                    {reg ? 'Already have an account?' : 'Don’t have an account?'}
+                    <span onClick={() => setReg(state => !state)}>{reg ? 'Sign In' : 'Sign Up'}</span>
                 </TextAsk>
             </RegistryForm>
 
