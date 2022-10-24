@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const RegSuccessBlock = styled.section`
+export const SuccessForm = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -10,7 +10,7 @@ export const RegSuccessBlock = styled.section`
   margin: 50px auto 0;
 `
 
-export const RegText = styled.div`
+export const Text = styled.div`
   display: flex;
   flex-direction: column;
     `
