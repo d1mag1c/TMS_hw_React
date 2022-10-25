@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     SmallCardBlock,
     SmallCardContent,
@@ -6,15 +6,32 @@ import {
     SmallCardImageBlock, SmallCardImg,
     SmallCardTitle
 } from "./style";
-import {PostsArray} from "../../../../../data/Posts";
 import Likes from "../../../../likes";
 import {IconBookmarkPoints} from "../../../../../iconBookmarkPoints";
 
+type itemsProps = {
+    id: number,
+    image: string,
+    text: string,
+    date: string,
+    lesson_num: number,
+    title: string,
+    author: number
+}
+
+// type ArrayOfBlogs = [itemsProps, ...itemsProps[]]
 
 const SmallCard = () => {
+
+    const [items, setItems] = useState<itemsProps[]>([])
+    useEffect(() => {
+        fetch('https://studapi.teachmeskills.by/blog/posts/?limit=10')
+            .then(response  => response.json())
+            .then(data => setItems(data.results))
+    }, [])
     return (
         <>
-            {PostsArray.results.slice(11, 20).map(e =>
+            {items.map(e =>
                 <SmallCardBlock key={e.id}>
                     <SmallCardContent>
                         <SmallCardDate>{e.date}</SmallCardDate>

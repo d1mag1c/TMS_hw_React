@@ -18,7 +18,7 @@ const Burger = () => {
             >
             </BurgerMenu>
             <BurgerListBlock show={open}><BurgerList/></BurgerListBlock>
-            {open && <BurgerModal onClick={() => openBurger(false)}/>}
+            {open && <BurgerModal onClick={()  => openBurger(false)}/>}
         </>
     );
 };

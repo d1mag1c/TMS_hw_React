@@ -7,20 +7,6 @@ const FlexBlock = `
 
 export const RegistryBlock = styled.section`
   ${FlexBlock};
-  position: absolute;
-  width: 1120px;
-  height: 1500px;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #F3F3F3;
-  z-index: 5;
-  color: black;
-  padding: 40px;
-  @media (max-width: 1180px) {
-    width: 100%;
-    padding: 0 20px;
-  }
 `
 
 export const RegistryTitle = styled.div`

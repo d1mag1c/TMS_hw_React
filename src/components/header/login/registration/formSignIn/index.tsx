@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {Link} from "./style";
 import InputForm from "../InputForm";
 
 // type Values = {
@@ -35,7 +34,7 @@ const FormSignIn = () => {
                 onChange={handleChange}
                 error
             />
-            <Link>Forgot password?</Link>
+            <p>Forgot password?</p>
         </>
     );
 };
