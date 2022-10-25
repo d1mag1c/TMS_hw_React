@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {IconUser, LoginBlock} from "./style";
-import Registration from "./registration";
+import {Link} from "react-router-dom";
 
 const Index = () => {
     const [registry, setRegistry] = useState(false);
@@ -10,13 +10,13 @@ const Index = () => {
 
     return (
         <>
-            <LoginBlock onClick={RegState}>
-                {/*<Initials/>*/}
-                {/*{<UserBlock>{UserObj[0].user}</UserBlock>}*/}
-                <IconUser/>
-
-            </LoginBlock>
-            {registry && <Registration/>}
+            <Link onClick={RegState}  to={registry ? '/' : '/registration' }>
+                <LoginBlock >
+                    {/*<Initials/>*/}
+                    {/*{<UserBlock>{UserObj[0].user}</UserBlock>}*/}
+                    <IconUser/>
+                </LoginBlock>
+            </Link>
         </>
     );
 };

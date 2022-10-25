@@ -1,20 +1,20 @@
 import {createGlobalStyle} from "styled-components";
 
 export const darkTheme = {
-  background: "#313037;",
-  textColor: "#fff",
-  fillColor: "#fff",
+    background: "#313037;",
+    textColor: "#fff",
+    fillColor: "#fff",
 }
 
 export const lightTheme = {
-  background: "#F3F3F3;",
-  textColor: "#000",
-  fillColor: "#000"
+    background: "#F3F3F3;",
+    textColor: "#000",
+    fillColor: "#000"
 }
-type ThemeType ={
-  background:string,
-  textColor:string
-  fillColor:string
+type ThemeType = {
+    background: string,
+    textColor: string
+    fillColor: string
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -23,7 +23,8 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  li{
+
+  li {
     list-style: none;
   }
 
@@ -31,17 +32,25 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
     cursor: pointer;
   }
-  a{
+
+  a {
     cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      color: red;
+    }
+    
   }
 `
 
-export const GlobalStyleBody = createGlobalStyle<{theme: ThemeType}>`
-  body{
+export const GlobalStyleBody = createGlobalStyle<{ theme: ThemeType }>`
+  body {
     background: ${props => props.theme.background};
     color: ${props => props.theme.textColor};
   }
-  svg{
+
+  svg {
     fill: ${props => props.theme.fillColor};
   }
 `

@@ -25,6 +25,6 @@ export const BurgerMenu = styled.div<{ symbol: string }>`
 export const BurgerModal = styled.div`
   position: absolute;
   width: 100%;
-  height: 2000px;
+  height: 900px;
   z-index: 2;
 `
