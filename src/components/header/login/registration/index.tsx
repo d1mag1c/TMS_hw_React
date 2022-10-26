@@ -11,7 +11,7 @@ const Registration = () => {
     return (
         <RegistryBlock>
             <RegistryTitle>
-                <Link to={'/'}>Back to home</Link>
+                <Link to={'/'} >Back to home</Link>
                 <h1>{reg ? 'Sign Up' : 'Sign In'}</h1>
             </RegistryTitle>
             <RegistryForm>
