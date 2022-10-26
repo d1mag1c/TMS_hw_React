@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {IconUser, LoginBlock} from "./style";
 import {Link} from "react-router-dom";
 
-const Index = () => {
+const Login = () => {
     const [registry, setRegistry] = useState(false);
     const RegState = () => {
         setRegistry(state => !state)
@@ -21,4 +21,4 @@ const Index = () => {
     );
 };
 
-export default Index;
+export default Login;

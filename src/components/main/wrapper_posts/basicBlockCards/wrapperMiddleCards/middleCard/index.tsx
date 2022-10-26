@@ -7,7 +7,7 @@ import {IconBookmarkPoints} from "../../../../../../iconBookmarkPoints";
 const MiddleCard = () => {
     return (
         <>
-            {PostsArray.results.slice(1, 10).map((e) =>
+            {PostsArray.results.slice(1, 7).map((e) =>
                 <MiddleCardBlock key={e.id}>
                     <MiddleCardImage src={e.image}/>
                     <MiddleCardDate>{e.date}</MiddleCardDate>

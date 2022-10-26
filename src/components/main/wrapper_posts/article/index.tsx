@@ -1,11 +1,16 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {ArticleBlock} from "./style";
+import {itemsProps} from '..';
 import SmallCard from "./smallCard";
 
-const Article = () => {
+type ArticleItemsProps = {
+    items: itemsProps[]
+}
+
+const Article: FC<ArticleItemsProps> = ({items}) => {
     return (
         <ArticleBlock>
-            <SmallCard/>
+            <SmallCard items={items}/>
         </ArticleBlock>
     );
 };
