@@ -47,10 +47,16 @@ export const RegButton = styled.button`
 `
 
 export const TextAsk = styled.p`
-align-self: center;
-  span{
+  align-self: center;
+
+  span {
     margin-left: 5px;
     cursor: pointer;
-    color:blue
+    color: blue
   }
+`
+
+export const ButtonTest = styled.button`
+  width: max-content;
+  margin: 0 auto;
 `

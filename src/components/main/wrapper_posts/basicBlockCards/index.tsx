@@ -7,7 +7,7 @@ const BasicBlockCards = () => {
     return (
         <BasicBlock>
             <BigCard></BigCard>
-<WrapperMiddleCards />
+            <WrapperMiddleCards/>
         </BasicBlock>
     );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Blog, BlogTabs} from "./style";
-import Tabs from "./tabs/Tabs";
+import Index from "./tabs";
 import WrapperPosts from "./wrapper_posts";
 
 const BlockMain = () => {
@@ -8,7 +8,7 @@ const BlockMain = () => {
         <>
             <BlogTabs>
                 <Blog>Blog</Blog>
-                <Tabs/>
+                <Index/>
             </BlogTabs>
             <WrapperPosts/>
         </>

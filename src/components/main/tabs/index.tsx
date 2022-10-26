@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {TabsBlock, TabsList, TabsLi, BorderTab} from "./style";
 
-const Tabs = () => {
+const Index = () => {
     const [toggleState, setToggleState] = useState(1)
     const TabUse = (index: number) => {
         setToggleState(index)
@@ -30,4 +30,4 @@ const Tabs = () => {
     );
 };
 
-export default Tabs;
+export default Index;

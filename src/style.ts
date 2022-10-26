@@ -36,11 +36,6 @@ export const GlobalStyle = createGlobalStyle`
   a {
     cursor: pointer;
     text-decoration: none;
-
-    &:hover {
-      color: red;
-    }
-    
   }
 `
 
@@ -52,6 +47,15 @@ export const GlobalStyleBody = createGlobalStyle<{ theme: ThemeType }>`
 
   svg {
     fill: ${props => props.theme.fillColor};
+  }
+  i{
+    border-bottom: 3px solid ${props => props.theme.textColor};
+  }
+  a:visited{
+    color: ${props => props.theme.textColor};
+  }
+  a:hover {
+    color: red;
   }
 `
 
