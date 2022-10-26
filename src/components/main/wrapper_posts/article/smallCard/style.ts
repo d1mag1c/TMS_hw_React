@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SmallCardBlock = styled.div`
   display: flex;
   border-bottom: 1px solid #bdbdbd;
-  height: 210px;
+  height: 205px;
   margin-bottom: 40px;
 `
 export const SmallCardContent = styled.div`

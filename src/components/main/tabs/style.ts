@@ -29,9 +29,9 @@ export const TabsLi = styled.li`
     cursor: pointer;
   }
 `
-export const BorderTab = styled.span<{borderWhite?:boolean}>`
+export const BorderTab = styled.i`
   position: absolute;
-  border-bottom: 3px solid ${props => props.borderWhite? 'white':'black'};
+ 
   width: 100%;
   bottom: -2px;
 `

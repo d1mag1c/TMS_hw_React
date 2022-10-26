@@ -5,6 +5,7 @@ import {Input, InputFormBlock} from "./style";
 type InputFormProps = {
     label: string,
     type: string,
+    name:string,
     placeholder: string,
     value: string,
     error: boolean,
@@ -25,6 +26,7 @@ const InputForm = (props: InputFormProps) => {
                 type={props.type}
                 placeholder={props.placeholder}
                 value={props.value}
+                name={props.name}
                 onChange={props.onChange}
                 onBlur={validateValue}
                 error={error && props.error}>
