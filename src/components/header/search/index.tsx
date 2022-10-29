@@ -26,10 +26,18 @@ const Search = () => {
         } else navigate('/')
     }
 
+    const SearchEnter = (e: React.KeyboardEvent<HTMLInputElement>):void =>{
+       if(e.key === 'Enter'){
+           e.preventDefault()
+           e.stopPropagation()
+           ValueSearch()
+       }
+    }
+
     return (
         <>
-            <Input id={'search'} type={'text'} value={value} onChange={ChangeValue}></Input>
-            <BtnSearch htmlFor={'search'} onClick={ValueSearch} >
+            <Input id={'search'} type={'text'} value={value} onChange={ChangeValue} onKeyDown={SearchEnter}></Input>
+            <BtnSearch htmlFor={'search'} onClick={ValueSearch}  >
                 <IconSearch/>
             </BtnSearch>
         </>
