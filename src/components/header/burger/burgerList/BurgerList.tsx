@@ -6,13 +6,12 @@ import {InitialsBlock} from "../../login/style";
 import {MoonIcon, SunIcon} from "./iconSunMoon";
 import {darkTheme, GlobalStyleBody, lightTheme} from "../../../../style";
 import {ThemeProvider} from 'styled-components';
-import {Link} from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 export const BurgerList = () => {
     const [theme, setTheme] = useState(true);
-
+    const navigate = useNavigate();
     return (
-
         <>
             <ThemeProvider theme={theme ? lightTheme : darkTheme}>
                 <GlobalStyleBody/>
@@ -25,7 +24,7 @@ export const BurgerList = () => {
                         </InitialsBlock>
                         {UserObj[0].user}
                     </BurgerListLi>
-                    <Link to={'/'}><BurgerListLi>Home</BurgerListLi></Link>
+                    <BurgerListLi onClick={() => navigate('/')}>Home</BurgerListLi>
                     <BurgerListLi>Add Post</BurgerListLi>
                     <BurgerListLi>
                         <IconSunMoonBlock
