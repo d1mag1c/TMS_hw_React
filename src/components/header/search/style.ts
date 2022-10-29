@@ -1,6 +1,29 @@
 import styled from "styled-components";
 
-export const BtnSearch = styled.div`
+export const Input = styled.input`
+  width: 100%;
+  background: #2231AA;
+  border: none;
+  padding-left: 20px;
+  border-right: 1px solid cornflowerblue;
+
+  &::placeholder {
+    color: white;
+    text-align: center;
+  }
+
+  &:focus {
+
+    outline: 0;
+    outline-offset: 0;
+    background: #84aeff;
+  }
+`
+type TLabel = {
+    htmlFor: string
+}
+
+export const BtnSearch = styled.label<TLabel>`
   width: 70px;
   min-width: 70px;
   display: flex;
@@ -13,7 +36,7 @@ export const BtnSearch = styled.div`
   }
     `
 
-export const Magnifier = styled.span`
+export const IconSearch = styled.span`
     border: 2px solid white;
   border-radius: 50%;
   width: 20px;
@@ -30,3 +53,4 @@ export const Magnifier = styled.span`
     transform: rotate(45deg);
   }
     `
+

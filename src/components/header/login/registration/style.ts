@@ -18,6 +18,9 @@ export const RegistryTitle = styled.div`
     font-size: 56px;
     line-height: 80px;
   }
+  & a {
+    width: max-content;
+  }
 `
 
 export const RegistryForm = styled.div`
@@ -26,12 +29,6 @@ export const RegistryForm = styled.div`
   padding: 40px;
   height: max-content;
   width: 624px;
-`
-
-export const Label = styled.label`
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 25px;
 `
 
 export const RegButton = styled.button`

@@ -8,6 +8,10 @@ import {Link} from "react-router-dom";
 const Registration = () => {
     const [success, setSuccess] = useState(false)
     const [reg, setReg] = useState(false)
+    // const location = useLocation()
+
+    // location.pathname !== '/registration' ? setReg(false) : null
+
     return (
         <RegistryBlock>
             <RegistryTitle>

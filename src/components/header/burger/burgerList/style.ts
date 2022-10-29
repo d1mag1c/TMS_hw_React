@@ -56,7 +56,7 @@ export const BurgerListLi = styled.li<IBurgerLi>`
     }
   }
 
-  &:nth-of-type(4) {
+  &:last-of-type {
     background: #E8E8E8;
     border-bottom: none;
 
