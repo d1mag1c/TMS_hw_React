@@ -18,7 +18,7 @@ const WrapperPosts = () => {
     const [items, setItems] = useState<itemsProps[]>([])
     useEffect(() => {
         fetch('https://studapi.teachmeskills.by/blog/posts/?limit=10')
-            .then(response  => response.json())
+            .then(response => response.json())
             .then(data => setItems(data.results))
     }, [])
 

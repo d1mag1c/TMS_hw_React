@@ -6,9 +6,10 @@ import {
     SmallCardImageBlock, SmallCardImg,
     SmallCardTitle
 } from "./style";
-import Likes from "../../../../likes";
-import {IconBookmarkPoints} from "../../../../../iconBookmarkPoints";
+
 import {itemsProps} from "../../index";
+import { IconBookmarkPoints } from '../../../../other/iconBookmarkPoints';
+import Likes from "../../../../other/likes";
 
 type SmallCardProps = {
     items: itemsProps[]

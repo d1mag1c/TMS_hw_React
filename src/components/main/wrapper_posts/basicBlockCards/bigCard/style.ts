@@ -25,6 +25,10 @@ export const BigCardTitle = styled.p`
   display: flex;
   height: 120px;
   overflow: hidden;
+  &:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
 `
 
 export const BigCardText = styled.p`

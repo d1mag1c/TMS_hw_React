@@ -8,15 +8,16 @@ import {
     BigCardTitle
 } from "./style";
 import {PostsArray} from "../../../../../data/Posts";
-import Likes from "../../../../likes";
-import {IconBookmarkPoints} from "../../../../../iconBookmarkPoints";
+import { IconBookmarkPoints } from '../../../../other/iconBookmarkPoints';
+import Likes from "../../../../other/likes";
+
 
 const BigCard = () => {
     return (
         <BigCardBlock>
             <BigCardContent>
                 <BigCardDate>{PostsArray.results[0].date}</BigCardDate>
-                <BigCardTitle>{PostsArray.results[0].title}</BigCardTitle>
+                <BigCardTitle id={String(PostsArray.results[0].id)}>{PostsArray.results[0].title}</BigCardTitle>
                 <BigCardText>{PostsArray.results[0].text}</BigCardText>
                 <Likes likesAmount={PostsArray.results[0].lesson_num}/>
             </BigCardContent>

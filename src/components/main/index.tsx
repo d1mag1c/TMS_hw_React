@@ -5,7 +5,8 @@ type MainProps = {
     children: ReactNode
 }
 
-const Main = ({children}: MainProps ) => {
+const Main = ({children}: MainProps) => {
+
     return (
         <MainBlock>
             {children}
