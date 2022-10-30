@@ -2,9 +2,8 @@ import React from 'react';
 import {CardContent, CardImg, CardImgBlock, CardInfo, Date, HeadTitle, Other, SearchCardsBlock, Title} from "./style";
 import {IPostResult} from "../../../../data/Posts";
 import {useLocation} from "react-router-dom";
-import {IconBookmarkPoints} from "../../../../iconBookmarkPoints";
-import Likes from '../../../likes';
-
+import {IconBookmarkPoints} from "../../../other/iconBookmarkPoints";
+import Likes from '../../../other/likes';
 
 const SearchCards = () => {
     const location = useLocation()

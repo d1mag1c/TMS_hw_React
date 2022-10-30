@@ -5,7 +5,7 @@ import MiddleCard from "./middleCard";
 const WrapperMiddleCards = () => {
     return (
         <WrapperMiddleCardsBlock>
-            <MiddleCard/>
+            <MiddleCard />
         </WrapperMiddleCardsBlock>
     );
 };
