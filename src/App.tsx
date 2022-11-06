@@ -14,8 +14,12 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<BlockMain/>}/>
                     <Route path="/registration" element={<Registration/>}/>
-                    <Route path="/search" element={<SearchCards/>}/>
-                    <Route path="/page" element={<PageSelected/>}/>
+                    <Route path="/search">
+                        <Route path=":value" element={<SearchCards/>}/>
+                    </Route>
+                    <Route path="/post">
+                        <Route path=":id" element={<PageSelected/>}/>
+                    </Route>
                 </Routes>
             </Layout>
         </>

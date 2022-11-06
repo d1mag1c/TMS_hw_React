@@ -10,6 +10,7 @@ import {
 import {itemsProps} from "../../index";
 import { IconBookmarkPoints } from '../../../../other/iconBookmarkPoints';
 import Likes from "../../../../other/likes";
+import {Link} from "react-router-dom";
 
 type SmallCardProps = {
     items: itemsProps[]
@@ -23,7 +24,10 @@ const SmallCard: FC<SmallCardProps> = ({items}) => {
                 <SmallCardBlock key={e.id}>
                     <SmallCardContent>
                         <SmallCardDate>{e.date}</SmallCardDate>
-                        <SmallCardTitle>{e.title}</SmallCardTitle>
+                       <Link to={`/post/${e.id}`}
+                             onClick={() => window.scrollTo(0, 0)}>
+                           <SmallCardTitle>{e.title}</SmallCardTitle>
+                       </Link>
                         <Likes likesAmount={e.lesson_num}/>
                     </SmallCardContent>
                     <SmallCardImageBlock>

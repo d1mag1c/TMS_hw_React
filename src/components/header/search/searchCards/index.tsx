@@ -1,20 +1,25 @@
 import React from 'react';
 import {CardContent, CardImg, CardImgBlock, CardInfo, Date, HeadTitle, Other, SearchCardsBlock, Title} from "./style";
-import {IPostResult} from "../../../../data/Posts";
-import {useLocation} from "react-router-dom";
+import {IPostResult, PostsArray} from "../../../../data/Posts";
+import {useParams} from "react-router-dom";
 import {IconBookmarkPoints} from "../../../other/iconBookmarkPoints";
 import Likes from '../../../other/likes';
 
 const SearchCards = () => {
-    const location = useLocation()
-    const Posts: IPostResult[] = location.state.ResultSearch
+    const params = useParams();
+    const paramsValue = params.value;
+
+    let ResultSearch: IPostResult[];
+
+    if(paramsValue){
+       ResultSearch = PostsArray.results.filter(e => e.title.toLowerCase().includes(paramsValue.toLowerCase()))
+    } else ResultSearch = []
 
     return (
         <>
-            <HeadTitle>{`Search results '${location.state.value}'`}</HeadTitle>
-            {Posts.map((card, index) =>
+            <HeadTitle>{`Search results '${paramsValue}'`}</HeadTitle>
+            {ResultSearch.map((card, index) =>
                 < SearchCardsBlock key={index}>
-
                     < CardContent>
                         < CardImgBlock>
                             < CardImg src={card.image}/>
@@ -31,9 +36,7 @@ const SearchCards = () => {
                     <Other>
                         <Likes likesAmount={card.lesson_num}></Likes>
                         <IconBookmarkPoints/>
-
                     </Other>
-
                 </SearchCardsBlock>)}
         </>
     );

@@ -51,6 +51,9 @@ export const GlobalStyleBody = createGlobalStyle<{ theme: ThemeType }>`
   i{
     border-bottom: 3px solid ${props => props.theme.textColor};
   }
+  a{
+    color: ${props => props.theme.textColor};
+  }
   a:visited{
     color: ${props => props.theme.textColor};
   }
