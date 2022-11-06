@@ -3,18 +3,9 @@ import {MiddleCardBlock, MiddleCardDate, MiddleCardImage, MiddleCardOther, Middl
 import {IconBookmarkPoints} from '../../../../../other/iconBookmarkPoints';
 import Likes from "../../../../../other/likes";
 import {PostsArray} from '../../../../../../data/Posts';
-import {useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const MiddleCard = () => {
-    const navigate = useNavigate()
-
-    const OpenCard = (id:number) => {
-        navigate('/page', {
-            state: {
-                id,
-            }
-        });
-    }
 
     return (
         <>
@@ -22,7 +13,9 @@ const MiddleCard = () => {
                 <MiddleCardBlock key={e.id}>
                     <MiddleCardImage src={e.image}/>
                     <MiddleCardDate>{e.date}</MiddleCardDate>
-                    <MiddleCardTitle onClick={() => OpenCard(e.id)}>{e.title}</MiddleCardTitle>
+                    <Link to={`/post/${e.id}`} onClick={() => window.scrollTo(0, 0)}>
+                        <MiddleCardTitle>{e.title}</MiddleCardTitle>
+                    </Link>
                     <MiddleCardOther>
                         <Likes likesAmount={e.lesson_num}/>
                         <IconBookmarkPoints/>

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {MouseEventHandler} from "react";
 
 export const MiddleCardBlock = styled.div`
   width: 100%;
@@ -22,11 +21,9 @@ height: 10%;
   color: #8D8E97;
 `
 
-type TitleType = {
-    onClick: MouseEventHandler<HTMLParagraphElement>
-}
 
-export const MiddleCardTitle = styled.p<TitleType>`
+
+export const MiddleCardTitle = styled.p`
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;

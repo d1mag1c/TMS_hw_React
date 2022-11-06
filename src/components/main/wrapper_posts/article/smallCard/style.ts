@@ -11,6 +11,7 @@ export const SmallCardContent = styled.div`
   flex-direction: column;
   width: 100%;
   justify-content: space-between;
+  
 `
 
 export const SmallCardDate = styled.p`
@@ -23,9 +24,9 @@ export const SmallCardDate = styled.p`
 
 `
 export const SmallCardTitle = styled.p`
-  display: flex;
+
   overflow: hidden;
-  height: 40%;
+  height: 100%;
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;

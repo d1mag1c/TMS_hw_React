@@ -10,6 +10,7 @@ import {
 import {PostsArray} from "../../../../../data/Posts";
 import { IconBookmarkPoints } from '../../../../other/iconBookmarkPoints';
 import Likes from "../../../../other/likes";
+import {Link} from "react-router-dom";
 
 
 const BigCard = () => {
@@ -17,7 +18,12 @@ const BigCard = () => {
         <BigCardBlock>
             <BigCardContent>
                 <BigCardDate>{PostsArray.results[0].date}</BigCardDate>
-                <BigCardTitle id={String(PostsArray.results[0].id)}>{PostsArray.results[0].title}</BigCardTitle>
+                <Link to={`/post/${PostsArray.results[0].id}`}
+                      onClick={() => window.scrollTo(0, 0)}>
+                    <BigCardTitle id={String(PostsArray.results[0].id)}>
+                    {PostsArray.results[0].title}
+                </BigCardTitle>
+                </Link>
                 <BigCardText>{PostsArray.results[0].text}</BigCardText>
                 <Likes likesAmount={PostsArray.results[0].lesson_num}/>
             </BigCardContent>

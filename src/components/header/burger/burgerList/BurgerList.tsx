@@ -24,7 +24,10 @@ export const BurgerList = () => {
                         </InitialsBlock>
                         {UserObj[0].user}
                     </BurgerListLi>
-                    <BurgerListLi onClick={() => navigate('/')}>Home</BurgerListLi>
+                    <BurgerListLi onClick={() => {
+                        window.scrollTo(0, 0)
+                        navigate('/')
+                    }}>Home</BurgerListLi>
                     <BurgerListLi>Add Post</BurgerListLi>
                     <BurgerListLi>
                         <IconSunMoonBlock

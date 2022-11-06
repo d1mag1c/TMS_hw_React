@@ -5,20 +5,19 @@ import {BurgerListBlock} from "./burgerList/style";
 
 
 const Burger = () => {
-    const [open, openBurger] = useState(false)
+    const [open, setOpen] = useState(false)
     const DisplayBurger = () => {
-        openBurger(state => !state)
+        setOpen(state => !state)
     }
 
     return (
         <>
             <BurgerMenu
                 onClick={DisplayBurger}
-                symbol={open ? '\\2716' : '\\2630'}
-            >
+                symbol={open ? '\\2716' : '\\2630'}>
             </BurgerMenu>
             <BurgerListBlock show={open}><BurgerList/></BurgerListBlock>
-            {open && <BurgerModal onClick={()  => openBurger(false)}/>}
+            {open && <BurgerModal onClick={()  => setOpen(false)}/>}
         </>
     );
 };

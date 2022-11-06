@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {BtnSearch, IconSearch, Input} from './style';
-import {IPostResult, PostsArray} from "../../../data/Posts";
 import {useNavigate} from "react-router-dom";
 
 const Search = () => {
@@ -11,19 +10,8 @@ const Search = () => {
         setValue(e.target.value)
     }
 
-    let ResultSearch: IPostResult[];
-
     const ValueSearch = () => {
-        ResultSearch = PostsArray.results.filter(e => e.title.toLowerCase().includes(value.toLowerCase()))
-        if (value) {
-
-            navigate('/search', {
-                state: {
-                    ResultSearch,
-                    value
-                }
-            });
-        } else navigate('/')
+        value ? navigate(`/search/${value}`) : navigate('/')
     }
 
     const SearchEnter = (e: React.KeyboardEvent<HTMLInputElement>):void =>{
