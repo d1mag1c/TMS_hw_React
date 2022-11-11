@@ -1,18 +1,20 @@
 import React from 'react';
-import {CardContent, CardImg, CardImgBlock, CardInfo, Date, HeadTitle, Other, SearchCardsBlock, Title} from "./style";
-import {IPostResult, PostsArray} from "../../../../data/Posts";
-import {useParams} from "react-router-dom";
+import {CardContent, CardImg, CardImgBlock,CardInfoBlock, Date, HeadTitle, Other, SearchCardsBlock, Title} from "./style";
+import {Link, useParams} from "react-router-dom";
 import {IconBookmarkPoints} from "../../../other/iconBookmarkPoints";
 import Likes from '../../../other/likes';
+import {useAppSelector} from "../../../../store";
+import { CardInfo } from '../../../../store/postsReducer/type';
 
 const SearchCards = () => {
     const params = useParams();
     const paramsValue = params.value;
 
-    let ResultSearch: IPostResult[];
-
+    let ResultSearch: CardInfo[];
+    const postsArray = useAppSelector(state => state.posts)
     if(paramsValue){
-       ResultSearch = PostsArray.results.filter(e => e.title.toLowerCase().includes(paramsValue.toLowerCase()))
+
+       ResultSearch = postsArray.filter(e => e.title?.toLowerCase().includes(paramsValue.toLowerCase()))
     } else ResultSearch = []
 
     return (
@@ -24,14 +26,17 @@ const SearchCards = () => {
                         < CardImgBlock>
                             < CardImg src={card.image}/>
                         </CardImgBlock>
-                        <CardInfo>
+                        <CardInfoBlock>
                             <Date>
                                 {card.date}
                             </Date>
-                            <Title>
+                            <Link to={`/post/${card.id}`}
+                                  onClick={() => window.scrollTo(0, 0)}>
+                            <Title >
                                 {card.title}
                             </Title>
-                        </CardInfo>
+                            </Link>
+                        </CardInfoBlock>
                     </CardContent>
                     <Other>
                         <Likes likesAmount={card.lesson_num}></Likes>
