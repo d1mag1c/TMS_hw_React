@@ -4,6 +4,7 @@ import BigCard from "./bigCard";
 import WrapperMiddleCards from "./wrapperMiddleCards";
 
 const BasicBlockCards = () => {
+
     return (
         <BasicBlock>
             <BigCard></BigCard>

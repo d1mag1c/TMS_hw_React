@@ -7,10 +7,20 @@ import {MoonIcon, SunIcon} from "./iconSunMoon";
 import {darkTheme, GlobalStyleBody, lightTheme} from "../../../../style";
 import {ThemeProvider} from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import {useDispatch} from "react-redux";
+import {useThemeSelector} from "../../../../store";
 
 export const BurgerList = () => {
     const [theme, setTheme] = useState(true);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const aaa = useThemeSelector(state => state)
+
+    const functionA = () => {
+        dispatch({type:"DARK_THEME"})
+    }
+
     return (
         <>
             <ThemeProvider theme={theme ? lightTheme : darkTheme}>
@@ -31,7 +41,11 @@ export const BurgerList = () => {
                     <BurgerListLi>Add Post</BurgerListLi>
                     <BurgerListLi>
                         <IconSunMoonBlock
-                            onClick={() => setTheme(true)}
+                            onClick={() => {
+                                setTheme(true)
+                                functionA()
+                                console.log(aaa.background)
+                            }}
                             fills={!theme}><SunIcon/>
                         </IconSunMoonBlock>
                         <IconSunMoonBlock
