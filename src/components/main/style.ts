@@ -5,6 +5,7 @@ export const MainBlock = styled.section`
   flex-direction: column;
   margin: 62px auto 20px;
   width: 1120px;
+  min-height: 600px;
 
   @media (max-width: 1180px) {
     width: 100%;

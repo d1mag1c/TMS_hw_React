@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {
     SmallCardBlock,
     SmallCardContent,
@@ -6,21 +6,18 @@ import {
     SmallCardImageBlock, SmallCardImg,
     SmallCardTitle
 } from "./style";
-
-import {itemsProps} from "../../index";
 import { IconBookmarkPoints } from '../../../../other/iconBookmarkPoints';
 import Likes from "../../../../other/likes";
 import {Link} from "react-router-dom";
+import {useAppSelector} from "../../../../../store";
 
-type SmallCardProps = {
-    items: itemsProps[]
-}
+const SmallCard = () => {
 
-const SmallCard: FC<SmallCardProps> = ({items}) => {
+    const postsArray = useAppSelector(state => state.posts)
 
     return (
         <>
-            {items.slice(0, 7).map((e) =>
+            {postsArray.slice(7, 14).map((e) =>
                 <SmallCardBlock key={e.id}>
                     <SmallCardContent>
                         <SmallCardDate>{e.date}</SmallCardDate>

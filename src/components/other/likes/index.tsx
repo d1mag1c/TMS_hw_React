@@ -3,7 +3,7 @@ import {LikeIcon, LikesBlock, LikesP} from "./style";
 import {DisLike, Like} from "./like";
 
 type ILikes = {
-    likesAmount: number
+    likesAmount?: number
 }
 const Likes = (props:ILikes) => {
     return (

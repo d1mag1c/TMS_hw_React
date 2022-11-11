@@ -1,12 +1,13 @@
 import React from 'react';
 import {BlockImg, Img, PageBlock, TextContent, Title} from "./style";
 import {useParams} from "react-router-dom";
-import {PostsArray} from "../../data/Posts";
+import {useAppSelector} from "../../store";
 
 const PageSelected = () => {
     const params = useParams();
     const cardId = params.id;
-    const findCard = PostsArray.results.find(e => e.id === Number(cardId))
+    const postsArray = useAppSelector(state => state.posts)
+    const findCard = postsArray.find(e => e.id === Number(cardId))
 
     return (
         <>

@@ -19,8 +19,8 @@ const Layout = ({children}: LayoutProps) => {
                 <Main>
                     {children}
                 </Main>
+                <Footer/>
             </BrowserRouter>
-            <Footer/>
         </>
     );
 };
