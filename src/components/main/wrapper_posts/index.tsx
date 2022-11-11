@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {WrapperPostsBlock} from './style';
+import {LoaderSpinner, WrapperPostsBlock} from './style';
 import BasicBlockCards from "./basicBlockCards";
 import Article from "./article";
 import {useDispatch} from "react-redux";
@@ -30,10 +30,10 @@ const WrapperPosts = () => {
 
     return (
         <>
-            {fetchState && <WrapperPostsBlock>
+            {fetchState ? <WrapperPostsBlock>
                 <BasicBlockCards></BasicBlockCards>
                 <Article></Article>
-            </WrapperPostsBlock>}
+                </WrapperPostsBlock> : <LoaderSpinner/>}
         </>
     );
 };
