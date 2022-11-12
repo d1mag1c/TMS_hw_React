@@ -3,24 +3,23 @@ import Footer from "../../components/footer";
 import {GlobalStyle} from "../../style";
 import Header from "../../components/header";
 import Main from "../../components/main";
-import {BrowserRouter} from "react-router-dom";
+import {useThemeSelector} from "../../store";
 
 type LayoutProps = {
     children: ReactNode
 }
 
 const Layout = ({children}: LayoutProps) => {
+    const selectTheme = useThemeSelector(state => state.themeReducer);
 
     return (
         <>
-            <GlobalStyle/>
-            <BrowserRouter>
-                <Header/>
-                <Main>
-                    {children}
-                </Main>
-                <Footer/>
-            </BrowserRouter>
+            <GlobalStyle props={selectTheme}/>
+            <Header/>
+            <Main>
+                {children}
+            </Main>
+            <Footer/>
         </>
     );
 };

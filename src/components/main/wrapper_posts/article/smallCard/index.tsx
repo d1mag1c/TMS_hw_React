@@ -13,7 +13,7 @@ import {useAppSelector} from "../../../../../store";
 
 const SmallCard = () => {
 
-    const postsArray = useAppSelector(state => state.posts)
+    const postsArray = useAppSelector(state => state.postReducer.posts)
 
     return (
         <>

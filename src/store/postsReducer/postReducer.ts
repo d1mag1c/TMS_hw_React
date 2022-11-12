@@ -1,9 +1,5 @@
 import {ACTION_POST_TYPES} from "./action";
-import {ActionPostType, CardInfo} from "./type";
-
-export type postsStateType = {
-    posts: CardInfo[]
-}
+import {ActionPostType, postsStateType} from "./type";
 
 const initialPostState: postsStateType = {
     posts: []

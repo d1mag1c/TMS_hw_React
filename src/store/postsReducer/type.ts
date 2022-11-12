@@ -18,3 +18,11 @@ export type ActionPostType = {
         id:number
     }
 }
+
+export type postsStateType = {
+    posts: CardInfo[]
+}
+
+export type postReducerType = {
+    postReducer: postsStateType
+}
