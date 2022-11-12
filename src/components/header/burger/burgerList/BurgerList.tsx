@@ -4,29 +4,25 @@ import {UserObj} from "../../../../data/Data";
 import {findInitials} from "../../login/Initials";
 import {InitialsBlock} from "../../login/style";
 import {MoonIcon, SunIcon} from "./iconSunMoon";
-import {darkTheme, GlobalStyleBody, lightTheme} from "../../../../style";
-import {ThemeProvider} from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import {useDispatch} from "react-redux";
-import {useThemeSelector} from "../../../../store";
+
 
 export const BurgerList = () => {
-    const [theme, setTheme] = useState(true);
+    const [state, setState] = useState(true);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const aaa = useThemeSelector(state => state)
+    const selectLightTheme = () => {
+        dispatch({type:"LIGHT_THEME"})
+    }
 
-    const functionA = () => {
+    const selectDarkTheme = () => {
         dispatch({type:"DARK_THEME"})
     }
 
     return (
         <>
-            <ThemeProvider theme={theme ? lightTheme : darkTheme}>
-                <GlobalStyleBody/>
-            </ThemeProvider>
-
                 <BurgerListUl>
                     <BurgerListLi bg white>
                         <InitialsBlock>
@@ -42,15 +38,15 @@ export const BurgerList = () => {
                     <BurgerListLi>
                         <IconSunMoonBlock
                             onClick={() => {
-                                setTheme(true)
-                                functionA()
-                                console.log(aaa.background)
-                            }}
-                            fills={!theme}><SunIcon/>
+                                setState(true)
+                                !state && selectLightTheme()}}
+                            fills={!state}><SunIcon/>
                         </IconSunMoonBlock>
                         <IconSunMoonBlock
-                            onClick={() => setTheme(false)}
-                            fills={theme}><MoonIcon/>
+                            onClick={() => {
+                                setState(false)
+                                state && selectDarkTheme()}}
+                            fills={state}><MoonIcon/>
                         </IconSunMoonBlock>
                     </BurgerListLi>
                     <BurgerListLi>Log Out</BurgerListLi>

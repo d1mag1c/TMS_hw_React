@@ -11,7 +11,7 @@ const SearchCards = () => {
     const paramsValue = params.value;
 
     let ResultSearch: CardInfo[];
-    const postsArray = useAppSelector(state => state.posts)
+    const postsArray = useAppSelector(state => state.postReducer.posts)
     if(paramsValue){
 
        ResultSearch = postsArray.filter(e => e.title?.toLowerCase().includes(paramsValue.toLowerCase()))

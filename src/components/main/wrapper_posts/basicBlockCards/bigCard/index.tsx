@@ -14,7 +14,7 @@ import {useAppSelector} from "../../../../../store";
 
 
 const BigCard = () => {
-    const postsArray = useAppSelector(state => state.posts[0])
+    const postsArray = useAppSelector(state => state.postReducer.posts[0])
 
     return (
         <BigCardBlock>

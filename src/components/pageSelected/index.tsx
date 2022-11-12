@@ -6,7 +6,7 @@ import {useAppSelector} from "../../store";
 const PageSelected = () => {
     const params = useParams();
     const cardId = params.id;
-    const postsArray = useAppSelector(state => state.posts)
+    const postsArray = useAppSelector(state => state.postReducer.posts)
     const findCard = postsArray.find(e => e.id === Number(cardId))
 
     return (

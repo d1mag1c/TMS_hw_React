@@ -1,23 +1,7 @@
 import {createGlobalStyle} from "styled-components";
+import {stateType} from "./store/themeReducer/type";
 
-export const darkTheme = {
-    background: "#313037;",
-    textColor: "#fff",
-    fillColor: "#fff",
-}
-
-export const lightTheme = {
-    background: "#F3F3F3;",
-    textColor: "#000",
-    fillColor: "#000"
-}
-type ThemeType = {
-    background: string,
-    textColor: string
-    fillColor: string
-}
-
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<{ props: stateType }>`
   * {
     margin: 0;
     padding: 0;
@@ -36,27 +20,26 @@ export const GlobalStyle = createGlobalStyle`
   a {
     cursor: pointer;
     text-decoration: none;
+    color: ${({props}) => props.color};
   }
-`
 
-export const GlobalStyleBody = createGlobalStyle<{ theme: ThemeType }>`
   body {
-    background: ${props => props.theme.background};
-    color: ${props => props.theme.textColor};
+    background: ${({props}) => props.background};
+    color: ${({props}) => props.color};
   }
 
   svg {
-    fill: ${props => props.theme.fillColor};
+    fill: ${({props}) => props.color};
   }
-  i{
-    border-bottom: 3px solid ${props => props.theme.textColor};
+
+  i {
+    border-bottom: 3px solid ${({props}) => props.color};
   }
-  a{
-    color: ${props => props.theme.textColor};
+
+  a:visited {
+    color: ${({props}) => props.color};
   }
-  a:visited{
-    color: ${props => props.theme.textColor};
-  }
+
   a:hover {
     color: red;
   }

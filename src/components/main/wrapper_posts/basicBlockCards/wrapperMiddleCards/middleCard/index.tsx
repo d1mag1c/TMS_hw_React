@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 import {useAppSelector} from "../../../../../../store";
 
 const MiddleCard = () => {
-    const postsArray = useAppSelector(state => state.posts)
+    const postsArray = useAppSelector(state => state.postReducer.posts)
     return (
         <>
             {postsArray.slice(1, 7).map((e) =>
