@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const WrapperPostsBlock = styled.div`
-    display: flex;
-  width: 100%;
-    `
+export const Blog = styled.h1`
+  font-size: 56px;
+  font-family: 'Inter', serif;
+`
 
 export const LoaderSpinner = styled.div`
   color: #404fbb;

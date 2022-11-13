@@ -1,7 +1,7 @@
 import React, {ReactNode} from 'react';
 import {MainBlock} from "./style";
 
-type MainProps = {
+export type MainProps = {
     children: ReactNode
 }
 
