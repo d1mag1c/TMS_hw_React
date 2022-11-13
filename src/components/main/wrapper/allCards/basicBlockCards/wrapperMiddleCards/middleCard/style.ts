@@ -5,6 +5,7 @@ export const MiddleCardBlock = styled.div`
   height: 450px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   border-bottom: 1px solid #bdbdbd;
 `
 

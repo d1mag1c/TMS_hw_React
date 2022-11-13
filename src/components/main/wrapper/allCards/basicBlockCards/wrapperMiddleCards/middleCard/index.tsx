@@ -1,12 +1,14 @@
 import React from 'react';
 import {MiddleCardBlock, MiddleCardDate, MiddleCardImage, MiddleCardOther, MiddleCardTitle} from "./style";
-import {IconBookmarkPoints} from '../../../../../other/iconBookmarkPoints';
-import Likes from "../../../../../other/likes";
 import {Link} from "react-router-dom";
-import {useAppSelector} from "../../../../../../store";
+import { useAppSelector } from '../../../../../../../store';
+import Likes from '../../../../../../other/likes';
+import { IconBookmarkPoints } from '../../../../../../other/iconBookmarkPoints';
 
 const MiddleCard = () => {
+
     const postsArray = useAppSelector(state => state.postReducer.posts)
+
     return (
         <>
             {postsArray.slice(1, 7).map((e) =>
@@ -18,12 +20,10 @@ const MiddleCard = () => {
                     </Link>
                     <MiddleCardOther>
                         <Likes likesAmount={e.lesson_num}/>
-                        <IconBookmarkPoints/>
+                        <IconBookmarkPoints id={e.id}/>
                     </MiddleCardOther>
                 </MiddleCardBlock>
-
             )}
-
         </>
     );
 };

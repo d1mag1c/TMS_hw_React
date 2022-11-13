@@ -6,10 +6,11 @@ import {
     SmallCardImageBlock, SmallCardImg,
     SmallCardTitle
 } from "./style";
-import { IconBookmarkPoints } from '../../../../other/iconBookmarkPoints';
-import Likes from "../../../../other/likes";
 import {Link} from "react-router-dom";
-import {useAppSelector} from "../../../../../store";
+import { useAppSelector } from '../../../../../../store';
+import Likes from '../../../../../other/likes';
+import { IconBookmarkPoints } from '../../../../../other/iconBookmarkPoints';
+
 
 const SmallCard = () => {
 
@@ -29,7 +30,7 @@ const SmallCard = () => {
                     </SmallCardContent>
                     <SmallCardImageBlock>
                         <SmallCardImg src={e.image}/>
-                        <IconBookmarkPoints/>
+                        <IconBookmarkPoints id={e.id}/>
                     </SmallCardImageBlock>
                 </SmallCardBlock>
             )}

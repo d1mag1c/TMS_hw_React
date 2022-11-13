@@ -40,7 +40,7 @@ const SearchCards = () => {
                     </CardContent>
                     <Other>
                         <Likes likesAmount={card.lesson_num}></Likes>
-                        <IconBookmarkPoints/>
+                        <IconBookmarkPoints id={card.id}/>
                     </Other>
                 </SearchCardsBlock>)}
         </>

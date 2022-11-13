@@ -17,7 +17,4 @@ export const BlogTabs = styled.div`
   flex-direction: column;
   margin-bottom: 64px;
 `
-export const Blog = styled.h1`
-  font-size: 56px;
-  font-family: 'Inter', serif;
-`
+

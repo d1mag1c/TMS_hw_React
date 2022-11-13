@@ -2,7 +2,8 @@ import {ACTION_POST_TYPES} from "./action";
 import {ActionPostType, postsStateType} from "./type";
 
 const initialPostState: postsStateType = {
-    posts: []
+    posts: [],
+    id: []
 };
 
 export const postReducer = (state = initialPostState, action: ActionPostType) => {
@@ -10,11 +11,10 @@ export const postReducer = (state = initialPostState, action: ActionPostType) =>
         case ACTION_POST_TYPES.ADD_POSTS:
             return {...state, posts: action.payload.posts}
         case ACTION_POST_TYPES.TOGGLE_FAVOURITE:
-            return ({...state,
-            posts: state.posts.map(item => item.id === action.payload.id ? {...item, favourite: !item.favourite}: item)
-            })
+            return ({...state, posts: action.payload.id})
         default:
             return state
     }
 }
 
+// state.posts.map(item => item.id === action.payload.id ? {...item, favourite: !item.favourite}: item)

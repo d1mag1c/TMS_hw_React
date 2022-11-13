@@ -7,11 +7,10 @@ import {
     BigCardText,
     BigCardTitle
 } from "./style";
-import { IconBookmarkPoints } from '../../../../other/iconBookmarkPoints';
-import Likes from "../../../../other/likes";
 import {Link} from "react-router-dom";
-import {useAppSelector} from "../../../../../store";
-
+import { useAppSelector } from '../../../../../../store';
+import Likes from '../../../../../other/likes';
+import { IconBookmarkPoints } from '../../../../../other/iconBookmarkPoints';
 
 const BigCard = () => {
     const postsArray = useAppSelector(state => state.postReducer.posts[0])
@@ -31,7 +30,7 @@ const BigCard = () => {
             </BigCardContent>
             <BigCardImageBlock>
                 <BigCardImage src={postsArray.image}></BigCardImage>
-                    <IconBookmarkPoints/>
+                    <IconBookmarkPoints id={postsArray.id}/>
             </BigCardImageBlock>
         </BigCardBlock>
     );
