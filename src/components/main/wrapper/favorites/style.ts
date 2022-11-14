@@ -63,7 +63,7 @@ export const Other = styled.div`
     display: flex;
   justify-content: space-between;
   height: 25px;
-  margin: 40px 0;
+  margin: 40px 0 20px;
   & div{
     height: 25px;
   }

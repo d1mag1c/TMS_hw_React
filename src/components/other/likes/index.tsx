@@ -10,7 +10,7 @@ const Likes = (props:ILikes) => {
         <LikesBlock>
             <LikeIcon><Like viewBox={"0 0 22 23"}/></LikeIcon>
             <LikesP>{props.likesAmount}</LikesP>
-            <LikeIcon><DisLike viewBox={"0 0 22 23"}/></LikeIcon>
+            <LikeIcon><DisLike viewBox={"0 0 22 22"}/></LikeIcon>
         </LikesBlock>
     );
 };
