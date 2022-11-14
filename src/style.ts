@@ -41,7 +41,8 @@ export const GlobalStyle = createGlobalStyle<{ props: stateType }>`
   }
 
   a:hover {
-    color: red;
+    color: #2231AA;
+    text-decoration: underline;
   }
 `
 

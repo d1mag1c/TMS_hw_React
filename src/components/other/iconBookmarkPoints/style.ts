@@ -13,3 +13,7 @@ export const BookmarkPointsBlock = styled.div`
     }
   }
     `
+
+export const IconWrapper = styled.div`
+    
+    `
