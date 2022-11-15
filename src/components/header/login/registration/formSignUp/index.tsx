@@ -1,20 +1,22 @@
 import React, {useState} from 'react';
 import InputForm from "../InputForm";
 import {RegButton} from "../style";
+import {useDispatch} from "react-redux";
+import {signUpRequest} from "../../../../../store/authReducer/action";
 
 type Values = {
-    name: string,
+    username: string,
     email : string,
     password : string,
-    passwordConfirm: string,
+    // passwordConfirm?: string,
 }
 
 const FormSignUp = () => {
     const [value, setValue] = useState<Values>({
-        name: '',
+        username: '',
         email: '',
         password: '',
-        passwordConfirm: '',
+        // passwordConfirm: '',
     })
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setValue((props: Values) => {
@@ -25,17 +27,19 @@ const FormSignUp = () => {
                 })
         })
     }
+
+    const dispatch = useDispatch();
     const DataForm = () => {
-        console.log(value)
+        dispatch(signUpRequest(value))
     }
     return (
         <>
             <InputForm
                 label={'Name'}
                 type={'text'}
-                name={'name'}
+                name={'username'}
                 placeholder={'Your name'}
-                value={value.name}
+                value={value.username}
                 error
                 onChange={handleChange}/>
             <InputForm
@@ -54,14 +58,14 @@ const FormSignUp = () => {
                 value={value.password}
                 error
                 onChange={handleChange}/>
-            <InputForm
-                label={'PasswordConfirm'}
-                type={'password'}
-                name={'passwordConfirm'}
-                placeholder={'Confirm password'}
-                value={value.passwordConfirm}
-                error
-                onChange={handleChange}/>
+            {/*<InputForm*/}
+            {/*    label={'PasswordConfirm'}*/}
+            {/*    type={'password'}*/}
+            {/*    name={'passwordConfirm'}*/}
+            {/*    placeholder={'Confirm password'}*/}
+            {/*    value={value.passwordConfirm}*/}
+            {/*    error*/}
+            {/*    onChange={handleChange}/>*/}
             <RegButton onClick={DataForm}>Sign Up</RegButton>
         </>
     );

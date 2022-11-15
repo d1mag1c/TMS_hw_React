@@ -5,15 +5,14 @@ export const BookmarkPointsBlock = styled.div`
   align-items: center;
   justify-content: end;
   height: 50px;
-  svg{
-    margin: 0 10px;
-    &:hover {
+  
+    svg:hover {
       fill: red;
       cursor: pointer;
     }
-  }
-    `
+`
 
 export const IconWrapper = styled.div`
-    
-    `
+  display: flex;
+  margin: 0 24px;
+`

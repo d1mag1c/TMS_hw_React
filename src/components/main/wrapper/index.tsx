@@ -1,11 +1,11 @@
 import React from 'react';
-import {MainProps} from '..';
 import {BlogTabs} from '../style';
 import {Blog, LoaderSpinner} from './style';
-import Tabs from './tabs';
 import {GetAllPosts} from "../../../data/getAllPosts";
+import Tabs from './tabs';
+import {Outlet} from "react-router-dom";
 
-const Wrapper = ({children}: MainProps) => {
+const Wrapper = () => {
 
     const getPosts = GetAllPosts();
 
@@ -15,7 +15,7 @@ const Wrapper = ({children}: MainProps) => {
                 <Blog>Blog</Blog>
                 <Tabs/>
             </BlogTabs>
-            {!getPosts.state ? children : <LoaderSpinner/>}
+            {!getPosts.state ? <Outlet />: <LoaderSpinner/>}
         </>
     );
 };
