@@ -15,7 +15,7 @@ export const themeReducer = (state = defaultState, action :actionThemeType) => {
             return {...state, background: "#313037;", color: "#fff"}
 
         default:
-            return state
+            return {...state}
     }
 };
 

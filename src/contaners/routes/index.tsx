@@ -10,9 +10,10 @@ import Wrapper from "../../components/main/wrapper";
 const RouteComponent = () => {
     return (
         <Routes>
-            <Route>
-                <Route path="/" element={<Wrapper><WrapperPosts/></Wrapper>}/>
-                <Route path=":favorites" element={<Wrapper><Favorites/></Wrapper>}/>
+
+            <Route path="/" element={<Wrapper/>} >
+                <Route index element={<WrapperPosts/>}/>
+                <Route path=":favorites" element={<Favorites/>}/>
             </Route>
 
             <Route path="/registration" element={<Registration/>}/>

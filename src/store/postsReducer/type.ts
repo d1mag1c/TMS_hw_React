@@ -14,13 +14,13 @@ export type ActionPostType = {
     type: ACTION_POST_TYPES,
     payload: {
         posts?: CardInfo[],
-        id:number[]
+        idFavorite?:number[]
     }
 }
 
 export type postsStateType = {
     posts: CardInfo[],
-    id:number[]
+    idFavorite:number[]
 }
 
 export type postReducerType = {
