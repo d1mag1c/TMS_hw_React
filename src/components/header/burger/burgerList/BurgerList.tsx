@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {BurgerListLi, BurgerListUl, IconSunMoonBlock} from "./style";
-import {UserObj} from "../../../../data/Data";
+import {UserObj} from "../../../../data/users";
 import {findInitials} from "../../login/Initials";
 import {InitialsBlock} from "../../login/style";
 import {MoonIcon, SunIcon} from "./iconSunMoon";

@@ -1,6 +1,6 @@
 import React from 'react';
 import {InitialsBlock} from "./style";
-import {UserObj} from "../../../data/Data";
+import {UserObj} from "../../../data/users";
 
 export function findInitials(user: string): string {
 
