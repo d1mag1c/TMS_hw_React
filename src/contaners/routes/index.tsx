@@ -6,6 +6,7 @@ import PageSelected from "../../components/pageSelected";
 import WrapperPosts from '../../components/main/wrapper/allCards';
 import Favorites from '../../components/main/wrapper/favorites';
 import Wrapper from "../../components/main/wrapper";
+import Popular from "../../components/main/wrapper/popular";
 
 const RouteComponent = () => {
     return (
@@ -13,7 +14,8 @@ const RouteComponent = () => {
 
             <Route path="/" element={<Wrapper/>} >
                 <Route index element={<WrapperPosts/>}/>
-                <Route path=":favorites" element={<Favorites/>}/>
+                <Route path="/favorites" element={<Favorites/>}/>
+                <Route path="/popular" element={<Popular/>}/>
             </Route>
 
             <Route path="/registration" element={<Registration/>}/>
@@ -23,6 +25,7 @@ const RouteComponent = () => {
             <Route path="/post">
                 <Route path=":id" element={<PageSelected/>}/>
             </Route>
+            <Route path="*" element={<h1>Ресурс не найден</h1>} />
         </Routes>
     );
 };

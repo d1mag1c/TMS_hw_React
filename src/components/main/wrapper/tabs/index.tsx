@@ -1,18 +1,20 @@
 import React from 'react';
 import {TabsBlock, TabsList, TabsLi} from "./style";
-import {useNavigate, useParams} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {BorderTab} from "./style";
 
 const Tabs = () => {
-    const params = useParams();
-    const paramsTab = Object.values(params)[0];
+    const pathName = window.location.pathname;
     const navigate = useNavigate();
 
     const TabAll = () => {
         navigate('/')
     }
     const TabFavorites = () => {
-        navigate('/favorites')
+        navigate('/favorites',)
+    }
+    const TabPopular = () => {
+        navigate('/popular')
     }
 
     return (
@@ -21,16 +23,17 @@ const Tabs = () => {
                 <TabsLi
                     onClick={TabAll}>
                     All
-                    {paramsTab === undefined ? <BorderTab/> : null}
+                    {pathName === '/' ? <BorderTab/> : null}
                 </TabsLi>
                 <TabsLi
                     onClick={TabFavorites}>
                     My favorites
-                    {paramsTab === 'favorites' ? <BorderTab/> : null}
+                    {pathName === '/favorites' ? <BorderTab/> : null}
                 </TabsLi>
-                <TabsLi>
+                <TabsLi
+                    onClick={TabPopular}>
                     Popular
-                    {paramsTab === 'popular' ? <BorderTab/> : null}
+                    {pathName === '/popular' ? <BorderTab/> : null}
                 </TabsLi>
             </TabsList>
         </TabsBlock>
