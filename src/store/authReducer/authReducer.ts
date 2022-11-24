@@ -1,7 +1,7 @@
 import {AuthActions, SignUpError, SignUpSuccessPayload,
-    SIGNUP_REQUEST,
     SIGNUP_SUCCESS,
     SIGNUP_FAILURE,} from "./type";
+import {REGISTER_FAILURE, REGISTER_SUCCESS} from "../saga/type";
 
 type AuthState = {
     user: SignUpSuccessPayload | null
@@ -22,7 +22,7 @@ export const authReducer = (state = initialState, action: AuthActions) => {
         //         ...state,
         //         // pending: true,
         //     };
-        case SIGNUP_FAILURE:
+        case SIGNUP_FAILURE || REGISTER_FAILURE:
             return {
                 ...state,
                 // pending: false,
@@ -30,7 +30,7 @@ export const authReducer = (state = initialState, action: AuthActions) => {
                 error: action.payload,
             };
 
-        case SIGNUP_SUCCESS:
+        case SIGNUP_SUCCESS || REGISTER_SUCCESS:
             return {
                 ...state,
                 // pending: false,

@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import InputForm from "../InputForm";
 import {RegButton} from "../style";
 import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import { signInRequest } from '../../../../../store/saga/type';
 
 type Values = {
     email : string,
@@ -23,8 +25,14 @@ const FormSignIn = () => {
                 })
         })
     }
+
+    const  dispatch = useDispatch();
     const DataForm = () => {
         console.log(value)
+        const isValid = true;
+        if(isValid) {
+            dispatch(signInRequest(value))
+        }
     }
     return (
         <>

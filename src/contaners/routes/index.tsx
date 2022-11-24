@@ -7,6 +7,7 @@ import WrapperPosts from '../../components/main/wrapper/allCards';
 import Favorites from '../../components/main/wrapper/favorites';
 import Wrapper from "../../components/main/wrapper";
 import Popular from "../../components/main/wrapper/popular";
+import { ActivationRoute } from './activation';
 
 const RouteComponent = () => {
     return (
@@ -25,6 +26,7 @@ const RouteComponent = () => {
             <Route path="/post">
                 <Route path=":id" element={<PageSelected/>}/>
             </Route>
+            <Route path='/activate/:uid/:token' element={<ActivationRoute/>} />
             <Route path="*" element={<h1>Ресурс не найден</h1>} />
         </Routes>
     );

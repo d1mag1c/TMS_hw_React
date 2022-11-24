@@ -1,7 +1,7 @@
 import { put, call, takeEvery } from 'redux-saga/effects'
-import {signUpFailure, signUpSuccess } from './action'
-import { SignUpPayload, SignUpSuccessPayload, SIGNUP_REQUEST } from './type'
 import { PayloadAction } from '@reduxjs/toolkit'
+import {signUpFailure, signUpSuccess} from '../authReducer/action'
+import { SignUpPayload, SignUpSuccessPayload, SIGNUP_REQUEST } from '../authReducer/type'
 
 const fetchData = async (payload: SignUpPayload): Promise<SignUpSuccessPayload> => {
     const headers = {
