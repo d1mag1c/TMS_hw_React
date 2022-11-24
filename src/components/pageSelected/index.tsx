@@ -1,6 +1,17 @@
 import React from 'react';
-import {BlockImg, FavoritesBlock, Icon, IconBlock, Img, LikesBlock, PageBlock, TextContent, Title} from "./style";
-import {useParams} from "react-router-dom";
+import {
+    BlockHomePost,
+    BlockImg,
+    FavoritesBlock,
+    Icon,
+    IconBlock,
+    Img,
+    LikesBlock,
+    PageBlock,
+    TextContent,
+    Title
+} from "./style";
+import {Link, useParams} from "react-router-dom";
 import {useAppSelector} from "../../store";
 import {DisLike, Like} from '../other/likes/like';
 import { FavoriteHook } from '../../hooks/favoriteHook';
@@ -19,6 +30,10 @@ const PageSelected = () => {
     return (
         <>
             {findCard && <PageBlock>
+                <BlockHomePost>
+                    <Link to='/'>Home</Link><p><span>|</span> Post {findCard.id}</p>
+                </BlockHomePost>
+
                 <Title>{findCard.title}</Title>
                 <BlockImg>
                     <Img src={findCard.image}/>

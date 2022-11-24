@@ -6,7 +6,19 @@ export const PageBlock = styled.section`
   justify-content: center;
   align-items: center;
   width: 100%;
-
+a{
+  align-self: start;
+  margin-bottom: 20px;
+  margin-right: 5px;
+}
+`
+export const BlockHomePost = styled.div`
+display: flex;
+justify-content: start;
+width: 100%;
+  p{
+    color: #8D8E97;
+  }
 `
 
 export const Title = styled.h1`
@@ -14,11 +26,11 @@ export const Title = styled.h1`
   font-size: 56px;
   line-height: 80px;
   margin-bottom: 40px;
-  text-align: center;
+
 `
 
 export const BlockImg = styled.div`
-  width: 100%;
+  width: 90%;
   height: 500px;
   margin: 20px;
 `
@@ -28,6 +40,7 @@ export const Img = styled.img`
   height: 100%;
 `
 export const TextContent = styled.p`
+  width: 85%;
   font-weight: 400;
   font-size: 18px;
   line-height: 32px;

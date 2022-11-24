@@ -11,7 +11,7 @@ const Tabs = () => {
         navigate('/')
     }
     const TabFavorites = () => {
-        navigate('/favorites',)
+        navigate('/favorites')
     }
     const TabPopular = () => {
         navigate('/popular')
