@@ -1,3 +1,5 @@
+import { REGISTER_SUCCESS } from "../saga/type"
+
 export type SignUpPayload = {
     username: string
     email: string
@@ -43,7 +45,13 @@ export type SignupFailure = {
     payload: SignUpError,
 };
 
+export type SignInSuccess = {
+    type: typeof REGISTER_SUCCESS,
+    payload: SignUpSuccessPayload
+}
+
 export type AuthActions =
     SignupFailure
     | SignupSuccess
-    | SignupRequest;
+    | SignupRequest
+    | SignInSuccess;
