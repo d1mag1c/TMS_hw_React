@@ -5,7 +5,7 @@ import {UserObj} from "../../../data/users";
 export function findInitials(user: string): string {
 
     let UserInitials: string = '';
-    user.split(' ').filter((e) => UserInitials += e[0])
+    user.split(' ' || '_').filter((e) => UserInitials += e[0])
     return UserInitials.toUpperCase()
 }
 

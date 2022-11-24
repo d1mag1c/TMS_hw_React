@@ -17,11 +17,7 @@ const initialState: AuthState = {
 
 export const authReducer = (state = initialState, action: AuthActions) => {
     switch (action.type) {
-        // case SIGNUP_REQUEST:
-        //     return {
-        //         ...state,
-        //         // pending: true,
-        //     };
+
         case SIGNUP_FAILURE || REGISTER_FAILURE:
             return {
                 ...state,
@@ -30,10 +26,17 @@ export const authReducer = (state = initialState, action: AuthActions) => {
                 error: action.payload,
             };
 
-        case SIGNUP_SUCCESS || REGISTER_SUCCESS:
+        case SIGNUP_SUCCESS:
             return {
                 ...state,
                 // pending: false,
+                user: action.payload,
+                error: null,
+            };
+        case REGISTER_SUCCESS:
+            console.log(action);
+            debugger;
+            return {
                 user: action.payload,
                 error: null,
             };

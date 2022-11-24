@@ -6,6 +6,7 @@ import {InitialsBlock} from "../../login/style";
 import {MoonIcon, SunIcon} from "./iconSunMoon";
 import { useNavigate } from 'react-router-dom';
 import {useDispatch} from "react-redux";
+import {useAppSelector} from "../../../../store";
 
 
 export const BurgerList = () => {
@@ -21,6 +22,8 @@ export const BurgerList = () => {
         dispatch({type:"DARK_THEME"})
     }
 
+    const user = useAppSelector(state => state.postReducer)
+    console.log(user)
     return (
         <>
                 <BurgerListUl>

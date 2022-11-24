@@ -1,7 +1,8 @@
-import { put, call, takeEvery } from 'redux-saga/effects'
-import { PayloadAction } from '@reduxjs/toolkit'
-
-import {SIGNIN_REQUEST, SignInError, signInFailure, SignInPayload, signInSuccess, SignInSuccessPayload} from './type';
+import {put, call, takeEvery} from 'redux-saga/effects'
+import {PayloadAction} from '@reduxjs/toolkit'
+import {SIGNIN_REQUEST, SignInError, signInFailure, SignInPayload, SignInSuccessPayload, registerSuccess} from './type';
+import {SignUpSuccessPayload} from "../authReducer/type";
+import {getProfile} from './getUser';
 
 
 const signInRequest = async (
@@ -33,10 +34,10 @@ const signInRequest = async (
 
 export function* signIn(action: PayloadAction<SignInPayload>) {
     try {
-        const data: SignInSuccessPayload = yield call(signInRequest, action.payload)
-        yield put(signInSuccess(data))
-        // @ts-ignore
-        // const userInfo: any = yield call(getProfile);
+        yield call(signInRequest, action.payload);
+
+        const userInfo: SignUpSuccessPayload = yield call(getProfile);
+        yield put(registerSuccess(userInfo))
         console.log(userInfo);
     } catch (error: any) {
         yield put(signInFailure(error))
