@@ -7,13 +7,15 @@ import WrapperPosts from '../../components/main/wrapper/allCards';
 import Favorites from '../../components/main/wrapper/favorites';
 import Wrapper from "../../components/main/wrapper";
 import Popular from "../../components/main/wrapper/popular";
-import { ActivationRoute } from './activation';
+import {ActivationRoute} from './activation';
+import Pagination from '../../components/pagination';
+import AddPost from "../../components/addPost";
 
 const RouteComponent = () => {
     return (
         <Routes>
 
-            <Route path="/" element={<Wrapper/>} >
+            <Route path="/" element={<Wrapper/>}>
                 <Route index element={<WrapperPosts/>}/>
                 <Route path="/favorites" element={<Favorites/>}/>
                 <Route path="/popular" element={<Popular/>}/>
@@ -26,8 +28,10 @@ const RouteComponent = () => {
             <Route path="/post">
                 <Route path=":id" element={<PageSelected/>}/>
             </Route>
-            <Route path='/activate/:uid/:token' element={<ActivationRoute/>} />
-            <Route path="*" element={<h1>Ресурс не найден</h1>} />
+            <Route path='/activate/:uid/:token' element={<ActivationRoute/>}/>
+            <Route path='addPost' element={<AddPost/>}/>
+            <Route path='pagination' element={<Pagination/>}/>
+            <Route path="*" element={<h1>Ресурс не найден</h1>}/>
         </Routes>
     );
 };
