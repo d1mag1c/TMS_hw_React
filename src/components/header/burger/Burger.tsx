@@ -9,6 +9,9 @@ const Burger = () => {
     const DisplayBurger = () => {
         setOpen(state => !state)
     }
+const closeBurger = () => {
+   setOpen(false)
+}
 
     return (
         <>
@@ -16,8 +19,8 @@ const Burger = () => {
                 onClick={DisplayBurger}
                 symbol={open ? '\\2716' : '\\2630'}>
             </BurgerMenu>
-            <BurgerListBlock show={open}><BurgerList/></BurgerListBlock>
-            {open && <BurgerModal onClick={()  => setOpen(false)}/>}
+            <BurgerListBlock show={open} onClick={closeBurger}><BurgerList/></BurgerListBlock>
+            {open && <BurgerModal onClick={closeBurger}/>}
         </>
     );
 };

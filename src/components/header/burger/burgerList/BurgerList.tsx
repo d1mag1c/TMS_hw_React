@@ -6,7 +6,6 @@ import {InitialsBlock} from "../../login/style";
 import {MoonIcon, SunIcon} from "./iconSunMoon";
 import { useNavigate } from 'react-router-dom';
 import {useDispatch} from "react-redux";
-import {useAppSelector} from "../../../../store";
 
 
 export const BurgerList = () => {
@@ -22,8 +21,7 @@ export const BurgerList = () => {
         dispatch({type:"DARK_THEME"})
     }
 
-    const user = useAppSelector(state => state.postReducer)
-    console.log(user)
+    // const user = useAppSelector(state => state.postReducer)
     return (
         <>
                 <BurgerListUl>
@@ -37,7 +35,7 @@ export const BurgerList = () => {
                         window.scrollTo(0, 0)
                         navigate('/')
                     }}>Home</BurgerListLi>
-                    <BurgerListLi>Add Post</BurgerListLi>
+                    <BurgerListLi onClick={() => navigate('/addPost')}>Add Post</BurgerListLi>
                     <BurgerListLi>
                         <IconSunMoonBlock
                             onClick={() => {

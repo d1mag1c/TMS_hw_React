@@ -1,39 +1,36 @@
 import React, {useState} from 'react';
-import {ErrorMessage, Label} from "./style";
-import {Input, InputFormBlock} from "./style";
+import {ErrorMessage, Label} from "../header/login/registration/InputForm/style";
+import { TextArea, TextAreaBlock} from "./style";
 
-type InputFormProps = {
+
+type TextAreaProps = {
     label: string,
-    type: string,
     name:string,
     placeholder: string,
     value: string,
     error?: boolean,
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+    onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void,
 }
 
-const InputForm = (props: InputFormProps) => {
+export const TextAreaComponent = (props: TextAreaProps) => {
 
     const [error, setError] = useState(false)
-    const validateValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const validateValue = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         e.target.value.length < 6 ? setError(true) : setError(false)
     }
 
     return (
-        <InputFormBlock>
+        <TextAreaBlock>
             <Label>{props.label}</Label>
-            <Input
-                type={props.type}
+            <TextArea
                 placeholder={props.placeholder}
-                value={props.value}
                 name={props.name}
+                value={props.value}
                 onChange={props.onChange}
                 onBlur={validateValue}
                 error={error && props.error}>
-            </Input>
+            </TextArea>
             {error && <ErrorMessage>{`error ${props.label}`}</ErrorMessage>}
-        </InputFormBlock>
+        </TextAreaBlock>
     );
 };
-
-export default InputForm;

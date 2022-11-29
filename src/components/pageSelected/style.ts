@@ -19,6 +19,9 @@ width: 100%;
   p{
     color: #8D8E97;
   }
+  span{
+    margin:0 8px;
+  }
 `
 
 export const Title = styled.h1`
