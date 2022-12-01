@@ -9,7 +9,7 @@ import Wrapper from "../../components/main/wrapper";
 import Popular from "../../components/main/wrapper/popular";
 import {ActivationRoute} from './activation';
 import Pagination from '../../components/pagination';
-import AddPost from "../../components/addPost";
+import AddPostPractic from '../../components/addPost/index1';
 
 const RouteComponent = () => {
     return (
@@ -29,7 +29,7 @@ const RouteComponent = () => {
                 <Route path=":id" element={<PageSelected/>}/>
             </Route>
             <Route path='/activate/:uid/:token' element={<ActivationRoute/>}/>
-            <Route path='addPost' element={<AddPost/>}/>
+            <Route path='addPost' element={<AddPostPractic/>}/>
             <Route path='pagination' element={<Pagination/>}/>
             <Route path="*" element={<h1>Ресурс не найден</h1>}/>
         </Routes>
