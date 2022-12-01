@@ -7,10 +7,10 @@ import {TextAreaComponent} from './textArea';
 
 type Values = {
     title: string,
-    url: string,
-    date: string,
+    lesson_num: string,
+    date?: string,
     image: string,
-    description: string,
+    description?: string,
     text: string,
 }
 
@@ -18,10 +18,8 @@ const AddPost = () => {
 
     const [value, setValue] = useState<Values>({
         title: '',
-        url: '',
-        date: '',
+        lesson_num: '',
         image: '',
-        description: '',
         text: ''
     })
 
@@ -48,6 +46,8 @@ const AddPost = () => {
     const FormSubmit = () => {
         console.log(value)
     }
+
+    
     return (
         <>
             <BlockHomePost>
@@ -64,21 +64,21 @@ const AddPost = () => {
                     error
                     onChange={handleChange}/>
                 <InputForm
-                    label={'URL'}
+                    label={'Lesson num'}
                     type={'text'}
-                    name={'url'}
-                    placeholder={'Add URL'}
-                    value={value.url}
+                    name={'lesson_num'}
+                    placeholder={'Add lesson_num'}
+                    value={value.lesson_num}
                     error
                     onChange={handleChange}/>
-                <InputForm
-                    label={'Publish at'}
-                    type={'date'}
-                    name={'date'}
-                    placeholder={'Add title'}
-                    value={value.date}
-                    error
-                    onChange={handleChange}/>
+                {/*<InputForm*/}
+                {/*    label={'Publish at'}*/}
+                {/*    type={'date'}*/}
+                {/*    name={'date'}*/}
+                {/*    placeholder={'Add title'}*/}
+                {/*    value={value.date}*/}
+                {/*    error*/}
+                {/*    onChange={handleChange}/>*/}
                 <InputForm
                     label={'Image'}
                     type={'file'}
@@ -89,13 +89,13 @@ const AddPost = () => {
                     onChange={handleChange}/>
             </InputBlock>
             <WrapperTextArea>
-                <TextAreaComponent
-                    label={'Description'}
-                    name={'description'}
-                    placeholder={'Add your text'}
-                    value={value.description}
-                    error
-                    onChange={handleChangeTextArea}/>
+                {/*<TextAreaComponent*/}
+                {/*    label={'Description'}*/}
+                {/*    name={'description'}*/}
+                {/*    placeholder={'Add your text'}*/}
+                {/*    value={value.description}*/}
+                {/*    error*/}
+                {/*    onChange={handleChangeTextArea}/>*/}
                 <TextAreaComponent
                     label={'Text'}
                     name={'text'}
