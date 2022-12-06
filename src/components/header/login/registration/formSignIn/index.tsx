@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import InputForm from "../InputForm";
 import {RegButton} from "../style";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import { signInRequest } from '../../../../../store/saga/type';
 
@@ -15,6 +15,8 @@ const FormSignIn = () => {
         email: "",
         password: "",
     })
+
+    const navigate = useNavigate()
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setValue((props: Values) => {
@@ -32,8 +34,10 @@ const FormSignIn = () => {
         const isValid = true;
         if(isValid) {
             dispatch(signInRequest(value))
+            navigate('/')
         }
     }
+
     return (
         <>
             <InputForm

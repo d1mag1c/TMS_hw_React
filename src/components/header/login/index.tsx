@@ -1,23 +1,29 @@
-import React, {useState} from 'react';
-import {IconUser, LoginBlock} from "./style";
-import {Link} from "react-router-dom";
+import React from 'react';
+import {FullName, IconUser, InitialsBlock, LoginBlock, WrapperUser} from "./style";
+import {useUserSelector} from "../../../store";
+import {useNavigate} from "react-router-dom";
 
-const Login = () => {
-    const [registry, setRegistry] = useState(false);
-    const RegState = () => {
-        setRegistry(state => !state)
+export const Login = () => {
+
+    const user = useUserSelector(state => state.authReducer.user?.username)
+    const navigate = useNavigate()
+
+    let userInitials: string = '';
+    if (user) {
+        user.split(' ' || '_').filter((e) => userInitials += e[0].toUpperCase())
     }
 
     return (
-        <>
-            <Link onClick={RegState}  to={registry ? '/' : '/registration' }>
-                <LoginBlock >
-                    {/*<Initials/>*/}
-                    {/*{<UserBlock>{UserObj[0].user}</UserBlock>}*/}
-                    <IconUser/>
-                </LoginBlock>
-            </Link>
-        </>
+        <LoginBlock onClick={() => navigate('/registration')}>
+            {user ?
+                <WrapperUser>
+                    <InitialsBlock>
+                        {userInitials}
+                    </InitialsBlock>
+                    <FullName>{user}</FullName>
+                </WrapperUser>
+                : <IconUser/>}
+        </LoginBlock>
     );
 };
 
