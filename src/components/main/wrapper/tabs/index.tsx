@@ -16,7 +16,9 @@ const Tabs = () => {
     const TabPopular = () => {
         navigate('/popular')
     }
-
+    const TabMyPosts = () => {
+        navigate('/my_posts')
+    }
     return (
         <TabsBlock>
             <TabsList>
@@ -34,6 +36,11 @@ const Tabs = () => {
                     onClick={TabPopular}>
                     Popular
                     {pathName === '/popular' ? <BorderTab/> : null}
+                </TabsLi>
+                <TabsLi
+                    onClick={TabMyPosts}>
+                    My posts
+                    {pathName === '/my_posts' ? <BorderTab/> : null}
                 </TabsLi>
             </TabsList>
         </TabsBlock>

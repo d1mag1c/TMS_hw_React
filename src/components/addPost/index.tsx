@@ -1,119 +1,58 @@
-import React, {useState} from 'react';
-import {BlockHomePost} from "../pageSelected/style";
-import {Link} from "react-router-dom";
-import {BlockErrorButton, Button1, Button2, ButtonBlock, ButtonBlockError, InputBlock, Title, WrapperTextArea} from "./style";
-import InputForm from "../header/login/registration/InputForm";
-import {TextAreaComponent} from './textArea';
-
-type Values = {
-    title: string,
-    lesson_num: string,
-    date?: string,
-    image: string,
-    description?: string,
-    text: string,
-}
+import React, {useRef, useState} from 'react';
+import {FormWrapper, ImgBlock, ImgForm, Input, InputButton, Title, WrapperBlock} from './style';
+import {tmsFetch} from "../../store/saga/tmsFetch";
+import {BlockHomePost} from '../pageSelected/style';
+import {Link} from 'react-router-dom';
 
 const AddPost = () => {
+        const formRef = useRef<HTMLFormElement>(null)
+        const [imageSrc, setImageSrc] = useState('');
 
-    const [value, setValue] = useState<Values>({
-        title: '',
-        lesson_num: '',
-        image: '',
-        text: ''
-    })
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-        setValue((props: Values) => {
-            return (
-                {
-                    ...props,
-                    [e.target.name]: e.target.value,
+        const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
+            e.preventDefault()
+            if (formRef?.current) {
+                console.log(new FormData(formRef.current))
+                tmsFetch('https://studapi.teachmeskills.by/blog/posts/', {
+                    method: 'POST',
+                    body: new FormData(formRef.current),
+                    // headers: {
+                    //     Accept:"application/json"
+                    // }
                 })
-        })
+                    .then(response => (response.json()))
+                    .then(data => console.log(data))
+            }
+        }
+        const handleInputValue = (e: any) => {
+            const image = URL.createObjectURL(e.target.files[0])
+            setImageSrc(image);
+        };
+        return (
+            <>
+                <BlockHomePost>
+                    <Link to='/'>Home</Link><p><span>|</span>add post</p>
+                </BlockHomePost>
+                <Title>Add post</Title>
+                <WrapperBlock>
+                    <FormWrapper>
+                        <form ref={formRef}>
+
+                            <Input type="text" name="title" placeholder="title"/>
+                            <Input type="text" name="lesson_num" placeholder="lesson"/>
+                            <Input type="file" name="image" placeholder="image" accept="image/*"
+                                   onChange={handleInputValue}/>
+                            <Input type="text" name="text" placeholder="description"/>
+                            <InputButton type="submit" onClick={handleSubmit}/>
+
+                        </form>
+                    </FormWrapper>
+                    <ImgBlock>
+                        {imageSrc && <ImgForm src={imageSrc}/>}
+                    </ImgBlock>
+                </WrapperBlock>
+            </>
+        );
     }
-    const handleChangeTextArea = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
-        setValue((props: Values) => {
-            return (
-                {
-                    ...props,
-                    [e.target.name]: e.target.value,
-                })
-        })
-    }
-
-
-    const FormSubmit = () => {
-        console.log(value)
-    }
-
-    
-    return (
-        <>
-            <BlockHomePost>
-                <Link to='/'>Home</Link><p><span>|</span>add post</p>
-            </BlockHomePost>
-            <Title>Add post</Title>
-            <InputBlock>
-                <InputForm
-                    label={'Title'}
-                    type={'text'}
-                    name={'title'}
-                    placeholder={'Add title'}
-                    value={value.title}
-                    error
-                    onChange={handleChange}/>
-                <InputForm
-                    label={'Lesson num'}
-                    type={'text'}
-                    name={'lesson_num'}
-                    placeholder={'Add lesson_num'}
-                    value={value.lesson_num}
-                    error
-                    onChange={handleChange}/>
-                {/*<InputForm*/}
-                {/*    label={'Publish at'}*/}
-                {/*    type={'date'}*/}
-                {/*    name={'date'}*/}
-                {/*    placeholder={'Add title'}*/}
-                {/*    value={value.date}*/}
-                {/*    error*/}
-                {/*    onChange={handleChange}/>*/}
-                <InputForm
-                    label={'Image'}
-                    type={'file'}
-                    name={'image'}
-                    placeholder={'Add image'}
-                    value={value.image}
-                    error
-                    onChange={handleChange}/>
-            </InputBlock>
-            <WrapperTextArea>
-                {/*<TextAreaComponent*/}
-                {/*    label={'Description'}*/}
-                {/*    name={'description'}*/}
-                {/*    placeholder={'Add your text'}*/}
-                {/*    value={value.description}*/}
-                {/*    error*/}
-                {/*    onChange={handleChangeTextArea}/>*/}
-                <TextAreaComponent
-                    label={'Text'}
-                    name={'text'}
-                    placeholder={'Add your text'}
-                    value={value.text}
-                    error
-                    onChange={handleChangeTextArea}/>
-            </WrapperTextArea>
-            <BlockErrorButton>
-                <ButtonBlockError>Delete post</ButtonBlockError>
-                <ButtonBlock>
-                    <Button1>Cancel</Button1>
-                    <Button2 onClick={FormSubmit}>Add Post</Button2>
-                </ButtonBlock>
-
-            </BlockErrorButton>
-        </>
-    );
-};
+;
 
 export default AddPost;
