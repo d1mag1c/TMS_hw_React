@@ -9,7 +9,8 @@ import Wrapper from "../../components/main/wrapper";
 import Popular from "../../components/main/wrapper/popular";
 import {ActivationRoute} from './activation';
 import Pagination from '../../components/pagination';
-import AddPostPractic from '../../components/addPost/index1';
+import AddPost from '../../components/addPost';
+import MyPosts from "../../components/main/wrapper/myPosts";
 
 const RouteComponent = () => {
     return (
@@ -19,6 +20,7 @@ const RouteComponent = () => {
                 <Route index element={<WrapperPosts/>}/>
                 <Route path="/favorites" element={<Favorites/>}/>
                 <Route path="/popular" element={<Popular/>}/>
+                <Route path="/my_posts" element={<MyPosts/>}/>
             </Route>
 
             <Route path="/registration" element={<Registration/>}/>
@@ -29,7 +31,7 @@ const RouteComponent = () => {
                 <Route path=":id" element={<PageSelected/>}/>
             </Route>
             <Route path='/activate/:uid/:token' element={<ActivationRoute/>}/>
-            <Route path='addPost' element={<AddPostPractic/>}/>
+            <Route path='addPost' element={<AddPost/>}/>
             <Route path='pagination' element={<Pagination/>}/>
             <Route path="*" element={<h1>Ресурс не найден</h1>}/>
         </Routes>
