@@ -46,3 +46,7 @@ export const authReducer = (state = initialState, action: AuthActions) => {
             };
     }
 };
+
+export type AuthStateType = {
+    authReducer: AuthState
+}

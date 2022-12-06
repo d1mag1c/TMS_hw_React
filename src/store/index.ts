@@ -5,7 +5,7 @@ import {postReducer, } from "./postsReducer/postReducer";
 import {themeReducer} from "./themeReducer/themeReducer";
 import { postReducerType } from "./postsReducer/type";
 import createSagaMiddleware from 'redux-saga'
-import {authReducer} from "./authReducer/authReducer";
+import {authReducer, AuthStateType} from "./authReducer/authReducer";
 import { signUpSaga } from "./saga/saga";
 import { themeReducerType } from "./themeReducer/type";
 import {all} from "redux-saga/effects";
@@ -13,6 +13,7 @@ import {signInSaga} from "./saga/signInSaga";
 
 export const useThemeSelector: TypedUseSelectorHook<themeReducerType> = useSelector
 export const useAppSelector: TypedUseSelectorHook<postReducerType> = useSelector
+export const useUserSelector: TypedUseSelectorHook<AuthStateType> = useSelector
 
 export const reducer = combineReducers({
     postReducer,

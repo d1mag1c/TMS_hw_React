@@ -1,8 +1,8 @@
 import React from 'react';
 import {HeaderBlock} from "./style";
 import Burger from "./burger/Burger";
-import Login from "./login";
 import Search from "./search";
+import Login from './login';
 
 const Header = () => {
     return (
